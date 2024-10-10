@@ -8,8 +8,8 @@ app.use(cors())
 
 let user = [
     {
-        login: "admin",
-        senha: "admin"
+        "login": "teste",
+        "psw": "teste"
     }
 ]
 
