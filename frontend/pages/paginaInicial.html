@@ -17,10 +17,10 @@
     <header>
         <img src="./../IMAGENS/LOGO.png">
         <ul>
-            <li><a href="">Início</a></li>
+            <li><a href="./paginaInicial.html">Início</a></li>
             <li><a href="">Oficina</a></li>
             <li><a href="">Saúde e Bem-Estar</a></li>
-            <li><a href="">Contato</a></li>
+            <li><a href="./paginaContato.html">Contato</a></li>
             <li><a href="">Eventos</a></li>
             <li><a href="./paginaLogin.html">Login</a></li>
         </ul>
@@ -40,8 +40,54 @@
                de trabalho.
             </p>
         </div>
-        <div class="imagem">
-            <img src="./../IMAGENS/IMG_2543.jpg">
+        <div class="slider">
+            <div class="slides">
+                <!--Botões Slide-->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <input type="radio" name="radio-btn" id="radio5">
+                <input type="radio" name="radio-btn" id="radio6">
+
+                <!--Imagens Slide-->
+                <div class="primeiro-slide">
+                    <img src="./../IMAGENS/IMG_2543.jpg">
+                </div>
+                <div class="segundo-slide">
+                    <img src="./../IMAGENS/IMG_1883.jpeg">
+                </div>
+                <div class="terceiro-slide">
+                    <img src="./../IMAGENS/IMG_2421.heic">
+                </div>
+                <div class="quarto-slide">
+                    <img src="./../IMAGENS/IMG_1823.jpeg">
+                </div>
+                <div class="quinto-slide">
+                    <img src="./../IMAGENS/IMG_1743.jpeg">
+                </div>
+                <div class="sexto-slide">
+                    <img src="./../IMAGENS/IMG_2090.heic">
+                </div>
+
+                <!--Auto navegação-->
+                <div class="navigation">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                    <div class="auto-btn5"></div>
+                    <div class="auto-btn6"></div>
+                </div>
+            </div>
+            <div class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+                <label for="radio5" class="manual-btn"></label>
+                <label for="radio6" class="manual-btn"></label>
+            </div>
         </div>
     </div>
 
