@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <link rel="stylesheet" href="./../style/contato.css">
+    <title>Contato</title>
+</head>
+<body>
+    
+    <header>
+        <img src="./../IMAGENS/LOGO.png">
+        <ul>
+            <li><a href="./paginaInicial.html">Início</a></li>
+            <li><a href="">Oficina</a></li>
+            <li><a href="">Saúde e Bem-Estar</a></li>
+            <li><a href="./paginaContato.html">Contato</a></li>
+            <li><a href="">Eventos</a></li>
+            <li><a href="./paginaLogin.html">Login</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <div class="mensagem-card">
+            <div class="nome-email">
+                <h1>Nome</h1>
+                <input type="text" class="input">
+
+                <h1>Email</h1>
+                <input type="text" class="input">
+            </div>
+            <div class="mensagem-2">
+                <div class="mensagem">
+                    <h1>Mensagem</h1>
+                    <input type="text" class="mensagem-input">
+                </div>
+                <div class="enviar">
+                    <button type="submit">Enviar</button>
+                </div>  
+            </div>  
+        </div>
+        <div class="mapa-card">
+            <h1>R. Demóstenes, 1209 - Campo Belo</h1>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="icons">
+            <a href="https://web.facebook.com/Passatempoedu/?locale=pt_BR&_rdc=1&_rdr"><i class="fa-brands fa-square-facebook fa-2x"></i>
+            <a href="https://www.instagram.com/passatempoeducativo/"><i class="fa-brands fa-instagram fa-2x"></i></a>
+        </div>
+    </footer>
+
+    <script src="./../script/contato.js"></script>
+    <script src="./../../node_modules/leaflet/dist/leaflet.js"></script>
+    
+</body>
+</html>
