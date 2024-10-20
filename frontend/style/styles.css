@@ -117,14 +117,6 @@ header a {
   left: 150px;
 }
 
-.manual-btn:not(:last-child){
-  margin-right: 40px;
-}
-
-.manual-btn:hover{
-  background-color: #fff;
-}
-
 #radio1:checked ~ .primeiro{
   margin-left: 0;
 }
@@ -164,4 +156,74 @@ footer {
   margin-right: 20px;
   cursor: pointer;
   color: white;
+}
+
+@media screen and (max-width: 500px){
+
+  .lista{
+    display: none;
+  }
+  
+  .container{
+    display: flex;
+    flex-direction: column;
+    height: 150vh;
+  }
+
+  .apresentacao{
+    height: 100%;
+    max-height: 360px;
+    max-width: 300px;
+  }
+
+  .apresentacao h1{
+    font-size: 26px
+  }
+
+  .apresentacao p{
+    font-size: 15px;
+  }
+
+  .slider {
+    width: 280px;
+    height: 200px;
+  }
+
+  .slide img{
+    height: 200px;
+    width: 280px;
+  }
+
+  #radio1:checked ~ .primeiro{
+    margin-left: 0;
+  }
+
+  #radio2:checked ~ .primeiro{
+    margin-left: -29.6%;
+  }
+
+  #radio3:checked ~ .primeiro{
+    margin-left: -58.9%;
+  }
+
+  #radio4:checked ~ .primeiro{
+    margin-left: -88.5%;
+  }
+
+  footer{
+    height: 50px;
+  }
+
+  .icons i{
+    margin-right: 0px;
+  }
+
+  .icons .face{
+    margin-right: 10px;
+  }
+
+  .icons .insta{
+    margin-left: 10px;
+  }
+
 }
