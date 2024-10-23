@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: "Luckiest Guy", serif;
+    font-family: "Luckiest Guy", sans-serif;
     background-image: url(./../IMAGENS/Background.png);
     background-repeat: none;
     background-position: center;
@@ -62,8 +62,9 @@ header a {
     flex-direction: column;
 }
 
-.mensagem-card h1 {
+p {
     font-size: 20px;
+    margin-bottom: 5px;
 }
 
 .input {
@@ -74,14 +75,11 @@ header a {
     height: 5em;
 }
 
-.nome-email,
 .nome-email input {
     margin-bottom: 20px;
 }
 
-
-.nome-email,
-.nome-email h1 {
+.nome-email p {
     margin-top: 10px;
 }
 
@@ -100,20 +98,25 @@ header a {
 }
 
 .enviar button {
-    background: #dfdfdf;
+    background: #ED3237;
     border: none;
-    color: black;
+    color: #fff;
     border-radius: 20px;
     width: 150px;
     height: 70px;
-    font-family: 'Luckiest Guy', serif;
-    font-size: 22px;
+    font-family: "Luckiest Guy", sans-serif;
     cursor: pointer;
     margin-left: 10px;
 }
 
+.enviar button p{
+    margin-top: 10px;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
 .enviar button:hover {
-    background-color: #cfcfcf;
+    background-color: #e42a30;
     transition: all ease .3s;
 }
 
@@ -127,7 +130,7 @@ header a {
     text-align: center;
 }
 
-.mapa-card h1 {
+.mapa-card p {
     font-size: 29px;
     margin-bottom: 40px;
 }
