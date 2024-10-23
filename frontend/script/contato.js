@@ -6,3 +6,13 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var marker = L.marker([-23.61995230868037, -46.66903327422016]).addTo(map);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const logo = document.getElementById('header-logo');
+    const lista = document.querySelector('.lista');
+
+    logo.addEventListener('click', function () {
+        lista.classList.toggle('visible');
+    });
+});
