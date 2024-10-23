@@ -84,53 +84,53 @@ header a {
   border-radius: 20px;
 }
 
-.slides{
+.slides {
   width: 400%;
   height: 400px;
   display: flex;
 }
 
-.slides input{
+.slides input {
   display: none;
 }
 
-.slide{
+.slide {
   width: 25%;
   position: relative;
   transition: 2s;
 }
 
-.slide img{
+.slide img {
   width: 800px;
   border-radius: 20px;
   position: relative;
 }
 
-.img{
+.img {
   left: 50px;
 }
 
-.img2{
+.img2 {
   left: 100px;
 }
 
-.img3{
+.img3 {
   left: 150px;
 }
 
-#radio1:checked ~ .primeiro{
+#radio1:checked~.primeiro {
   margin-left: 0;
 }
 
-#radio2:checked ~ .primeiro{
+#radio2:checked~.primeiro {
   margin-left: -26.7%;
 }
 
-#radio3:checked ~ .primeiro{
+#radio3:checked~.primeiro {
   margin-left: -53.2%;
 }
 
-#radio4:checked ~ .primeiro{
+#radio4:checked~.primeiro {
   margin-left: -79.7%;
 }
 
@@ -159,35 +159,54 @@ footer {
   color: white;
 }
 
-@media screen and (max-width: 1700px){
-  .apresentacao p{
+@media screen and (max-width: 1700px) {
+  .apresentacao p {
     font-size: 1.07em;
   }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
 
-  .lista{
+  .lista {
     display: none;
+    flex-direction: column;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
-  
-  .container{
+
+  .lista.visible {
+    display: flex;
+    text-align: center;
+    transform: translateY(0);
+    position: absolute;
+    background-color: #313379;
+    top: 100%;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .lista li {
+    margin: 10px 0;
+    transition: all ease .3s;
+  }
+
+  .container {
     display: flex;
     flex-direction: column;
     height: 120vh;
   }
 
-  .apresentacao{
+  .apresentacao {
     height: 35%;
     width: 67%;
     margin-top: 20%;
   }
 
-  .apresentacao h1{
+  .apresentacao h1 {
     font-size: 26px
   }
 
-  .apresentacao p{
+  .apresentacao p {
     font-size: 0.9em;
   }
 
@@ -196,40 +215,40 @@ footer {
     height: 200px;
   }
 
-  .slide img{
+  .slide img {
     height: 200px;
     width: 280px;
   }
 
-  #radio1:checked ~ .primeiro{
+  #radio1:checked~.primeiro {
     margin-left: 0;
   }
 
-  #radio2:checked ~ .primeiro{
+  #radio2:checked~.primeiro {
     margin-left: -29.6%;
   }
 
-  #radio3:checked ~ .primeiro{
+  #radio3:checked~.primeiro {
     margin-left: -58.9%;
   }
 
-  #radio4:checked ~ .primeiro{
+  #radio4:checked~.primeiro {
     margin-left: -88.5%;
   }
 
-  footer{
+  footer {
     height: 50px;
   }
 
-  .icons i{
+  .icons i {
     margin-right: 0px;
   }
 
-  .icons .face{
+  .icons .face {
     margin-right: 10px;
   }
 
-  .icons .insta{
+  .icons .insta {
     margin-left: 10px;
   }
 

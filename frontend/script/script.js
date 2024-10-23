@@ -14,3 +14,12 @@ function nextImage() {
     document.getElementById("radio" + count).checked = true
 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const logo = document.getElementById('header-logo');
+    const lista = document.querySelector('.lista');
+
+    logo.addEventListener('click', function() {
+        lista.classList.toggle('visible');
+    });
+});
