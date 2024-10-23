@@ -64,7 +64,7 @@ header a {
 }
 
 .apresentacao h1 {
-  padding: 20px;
+  padding: 0.6em;
   font-size: 2rem;
 }
 
@@ -192,7 +192,7 @@ footer {
   .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 87vh;
   }
 
   .apresentacao {
@@ -202,7 +202,8 @@ footer {
   }
 
   .apresentacao h1 {
-    font-size: 26px
+    font-size: 26px;
+    padding: 0;
   }
 
   .apresentacao p {
@@ -212,7 +213,6 @@ footer {
   .slider {
     width: 280px;
     height: 200px;
-    margin-bottom: 20%;
   }
 
   .slide img {
