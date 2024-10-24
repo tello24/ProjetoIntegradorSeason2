@@ -1,26 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./../style/login.css">
-    <title>Login</title>
+    <title>Home</title>
 </head>
+
 <body>
+
+    <header>
+        <img id="header-logo" src="./../IMAGENS/LOGO.png">
+        <ul class="lista">
+            <li><a href="./paginaInicial.html">Início</a></li>
+            <li><a href="">Oficina</a></li>
+            <li><a href="">Saúde e Bem-Estar</a></li>
+            <li><a href="./paginaContato.html">Contato</a></li>
+            <li><a href="">Eventos</a></li>
+            <li><a href="./paginaLogin.html">Login</a></li>
+        </ul>
+    </header>
+
     <div class="container">
         <div class="login">
-            <form>
-                <h1>Login</h1>
-                <div class="inputs">
-                    <input type="text" id="login" placeholder="Digite seu Usuário">
-                    <input type="text" id="psw" placeholder="Digite sua Senha">
-                    <button type="button" onclick="verificaLogin()">Login</button>
+
+            <div class="esquerda">
+                <div class="slider">
+                    <div class="slides">
+                        <!--Botões Slide-->
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+        
+                        <!--Imagens Slide-->
+                        <div class="slide primeiro">
+                            <img src="./../IMAGENS/IMG_1854.jpeg">
+                        </div>
+                        <div class="slide">
+                            <img src="./../IMAGENS/IMG_1883.jpeg" class="img">
+                        </div>
+                        <div class="slide">
+                            <img src="./../IMAGENS/IMG_4071.jpeg" class="img2">
+                        </div>
+        
+                        <!--Auto navegação-->
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                        </div>
+                    </div>
                 </div>
-            </form>
+            </div>
+
+            <div class="direita">
+                <form>
+                    <div class="titulo">
+                        <p>Login</p>
+                    </div>
+                    <div class="inputs">
+                        <p>Nome</p>
+                        <input type="text" id="login" placeholder="Digite seu Usuário">
+                        <p>Senha</p>
+                        <input type="text" id="psw" placeholder="Digite sua Senha">
+                        <button type="button" onclick="verificaLogin()"><p>Acessar</p></button>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </div>
+
+    <footer>
+        <div class="icons">
+            <a href="https://web.facebook.com/Passatempoedu/?locale=pt_BR&_rdc=1&_rdr"><i
+                    class="face fa-brands fa-square-facebook fa-2x"></i>
+                <a href="https://www.instagram.com/passatempoeducativo/"><i
+                        class="insta fa-brands fa-instagram fa-2x"></i></a>
+        </div>
+    </footer>
+
+
+    <script src="./../script/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </body>
 
-<script src="./../script/login.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>
