@@ -1,45 +1,247 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
-    background-color: #ffd447;
-    font-family: Poppins, sans-serif;
+body {
+    font-family: "Luckiest Guy", sans-serif;
+    background-image: url(./../IMAGENS/Background.png);
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
 }
 
-.container{
+header {
+    background-color: #3E4096;
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+}
+
+header img {
+    max-height: 70%;
+    padding: 10px;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+}
+
+header li {
+    margin-right: 25px;
+    font-size: 1.4rem;
+    transition: all ease .3s;
+}
+
+header li:hover {
+    border-bottom: 2px solid #ffff;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
     height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white; 
+}
+
+.login {
+    background-color: #3E4096;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider {
+    width: 470px;
+    height: 630px;
+    overflow: hidden;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.slides {
+    width: 400%;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 25%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#radio1:checked~.primeiro {
+    margin-left: 0;
+}
+
+#radio2:checked~.primeiro {
+    margin-left: -25%;
+}
+
+#radio3:checked~.primeiro {
+    margin-left: -50%;
+}
+
+.direita{
+    padding: 100px;
+}
+
+.titulo p {
+    font-size: 50px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs p {
+    margin-bottom: 10px;
+}
+
+.inputs input {
+    margin-bottom: 20px;
+    height: 50px;
+    width: 300px;
+    background: #dfdfdf;
+    border: none;
+    border-radius: 20px;
+    padding-inline: 10px;
+}
+
+button {
+    background: #ED3237;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    height: 50px;
+    width: 320px;
+    font-family: "Luckiest Guy", sans-serif;
+    cursor: pointer;
+    font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login{
-    background-color: #efefef;
-    border-radius: 10px;
-    padding: 20px;
-    padding-top: 30px;
-    padding-bottom: 50px;
-    text-align: center;
-}
-
-h1{
-    margin-bottom: 30px;
-}
-
-.inputs{
+button p {
+    margin-top: 18px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-input{
-    margin-bottom: 20px;
-    padding: 10px 100px 10px 5px;
+footer {
+    background: #ED3237;
+    width: 100%;
+    height: 7%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-button{
-    padding: 10px;
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.icons i {
+    margin-right: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+
+    .lista {
+        display: none;
+        flex-direction: column;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .lista.visible {
+        display: flex;
+        text-align: center;
+        transform: translateY(0);
+        position: absolute;
+        background-color: #313379;
+        top: 100%;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .lista li {
+        margin: 10px 0;
+        transition: all ease .3s;
+    }
+
+    .container{
+        height: 93vh;
+    }
+
+    .login{
+        border-radius: 50px;
+        width: 80%;
+        padding: 20px;
+    }
+
+    .titulo p{
+        margin-bottom: 15px;
+    }
+
+    .esquerda{
+        display: none;
+    }
+
+    .direita{
+        padding: 0px;
+    }
+
+    footer {
+        height: 50px;
+    }
+
+    .icons i {
+        margin-right: 0px;
+    }
+
+    .icons .face {
+        margin-right: 10px;
+    }
+
+    .icons .insta {
+        margin-left: 10px;
+    }
+
+}
+
+/* 4071, 1883, 1854 */
