@@ -6,9 +6,7 @@
 body {
     font-family: "Luckiest Guy", serif;
     background-image: url(./../IMAGENS/Background.png);
-    background-repeat: none;
-    background-position: center;
-    background-size: cover;
+    background-size: contain;
   }
 
 header {
@@ -65,8 +63,46 @@ img{
     font-size: 18px;
     text-decoration: none;
     background: var(--orange-color);
-    
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+.button:active{
+  transform: scale(0.96);
+}
+
+#minhaLista {
+  display: none;
+  margin-top: 30px;
+}
+
+#minhaLista {
+  display: none;
+  margin-top: 10px;
+  background-color: #8DA5ED;
+  border-radius: 25px;
+  width: 500px;
+  height: 500px;
+  padding: 20px; /* Espaço interno para dar margem da borda */
+  box-sizing: border-box; /* Inclui padding dentro do width/height */
+  text-align: center; /* Centraliza o texto */
+}
+
+#minhaLista ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Garante que a lista ocupe o espaço disponível */
+}
+
+#minhaLista li {
+  padding: 10px 0; /* Ajuste o espaço entre os itens da lista */
+}
+
+
+
 .eventos{
     /* background-color: #8DA5ED; */
     padding: 90px;
@@ -114,6 +150,8 @@ align-items: center;
 display: flex;
 flex-direction: column;
 }
+
+
 
 
 
