@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Luckiest Guy", serif;
+    background-image: url(./../IMAGENS/Background.png);
+    background-size: contain;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #3E4096;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ED3237;
+}
+
+header {
+    background-color: #3E4096;
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+}
+
+header img {
+    max-height: 70%;
+    padding: 10px;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+}
+
+header li {
+    margin-right: 25px;
+    font-size: 1.4rem;
+    transition: all ease .3s;
+}
+
+header li:hover {
+    border-bottom: 2px solid #ffff;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+#content {
+    height: 300vh;
+}
+
+footer {
+    background: #ED3237;
+    width: 100%;
+    height: 3rem;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons i {
+    margin-right: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+
+    .lista {
+        display: none;
+        flex-direction: column;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .lista.visible {
+        display: flex;
+        text-align: center;
+        transform: translateY(0);
+        position: absolute;
+        background-color: #313379;
+        top: 100%;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .lista li {
+        margin: 10px 0;
+        transition: all ease .3s;
+    }
+
+    footer {
+        height: 50px;
+    }
+
+    .icons i {
+        margin-right: 0px;
+    }
+
+    .icons .face {
+        margin-right: 10px;
+    }
+
+    .icons .insta {
+        margin-left: 10px;
+    }
+
+}
