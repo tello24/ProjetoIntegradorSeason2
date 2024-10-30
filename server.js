@@ -1,37 +1,56 @@
-import express from 'express'
-import cors from 'cors'
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
 
-const app = express()
-app.use(express.json())
-app.use(cors())
+const app = express();
+app.use(express.json());
+app.use(cors());
 
-
-let user = [
-    {
-        "login": "teste",
-        "psw": "teste"
+// Conectar ao MongoDB
+async function conectarAoMongo() {
+    try {
+        await mongoose.connect('mongodb+srv://projetoseason2:12345@projetoseason2.arthu.mongodb.net/projetoseason2?retryWrites=true&w=majority&appName=projetoseason2', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log("Conexão com MongoDB estabelecida");
+    } catch (error) {
+        console.error('Erro de conexão com o MongoDB:', error);
     }
-]
-// teste
+}
 
-app.get('/login', (req, res) => {
-    res.json(user)
-})
+// Modelo do Usuário
+const userSchema = new mongoose.Schema({
+    login: { type: String, required: true },
+    senha: { type: String, required: true }
+});
 
-app.post('/login', (req, res) => {
-    const login = req.body.login
-    const senha = req.body.senha
+const User = mongoose.model('User', userSchema);
 
-    const novo_login = {
-        login: login,
-        senha: senha
+// Rotas
+app.get('/login', async (req, res) => {
+    try {
+        const users = await User.find();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao buscar usuários', details: error });
     }
+});
 
-    user.push(novo_login)
+app.post('/login', async (req, res) => {
+    const { login, senha } = req.body;
 
-    res.json(user)
-})
+    try {
+        const novoUsuario = new User({ login, senha });
+        await novoUsuario.save();
+        res.json(novoUsuario);
+    } catch (error) {
+        res.status(400).json({ error: 'Erro ao criar usuário', details: error });
+    }
+});
 
-app.listen(3002, () => {
-    console.log("server up and running")
-})
+// Iniciar o servidor e conectar ao MongoDB
+app.listen(8000, async () => {
+    await conectarAoMongo();
+    console.log("Servidor rodando na porta 8000");
+});
