@@ -30,12 +30,14 @@ const User = mongoose.model('User', userSchema);
 // Rotas
 app.get('/login', async (req, res) => {
     try {
-        const users = await User.find();
-        res.json(users);
+        // Busca todos os usuários, mas omite o campo senha
+        const users = await User.find({}, { senha: 0 });
+        res.json(users); // Retorna a lista de usuários
     } catch (error) {
         res.status(500).json({ error: 'Erro ao buscar usuários', details: error });
     }
 });
+
 
 app.post('/login', async (req, res) => {
     const { login, senha } = req.body;

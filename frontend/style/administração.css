@@ -60,6 +60,249 @@ header a {
     height: 300vh;
 }
 
+#usuarios,
+#conteudo,
+#chamados {
+    height: 100vh;
+}
+
+#usuarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-usuarios {
+    background-color: #3E4096;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    margin-top: 120px;
+}
+
+.titulo-usuarios p {
+    font-size: 50px;
+    padding: 20px 40px;
+    margin-top: 12px;
+    color: white;
+}
+
+.cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+
+.card-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3E4096;
+    padding: 50px;
+    border-radius: 50px;
+    color: white;
+}
+
+.titulo-cadastro p {
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.inputs-cadastro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-input-card {
+    width: 70%;
+}
+
+.inputs-cadastro p {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.inputs-cadastro input {
+    margin-bottom: 20px;
+    height: 50px;
+    width: 70%;
+    background: #dfdfdf;
+    border: none;
+    border-radius: 20px;
+}
+
+.card-cadastro button {
+    background: #ED3237;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    height: 50px;
+    width: 70%;
+    font-family: "Luckiest Guy", sans-serif;
+    cursor: pointer;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.card-cadastro button p {
+    margin-top: 5px;
+}
+
+.card-cadastro button:hover {
+    background-color: #d02b30;
+    transition: all .3s
+}
+
+
+
+.card-busca-usuarios {
+    background-color: #3E4096;
+    width: 35%;
+    padding: 60px;
+    color: white;
+    border-radius: 50px;
+}
+
+.header-busca {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.header-busca p {
+    font-size: 40px;
+}
+
+.header-busca-inputs {
+    display: flex;
+    width: 50%;
+    gap: 10px;
+}
+
+.header-busca input {
+    margin-bottom: 20px;
+    height: 50px;
+    width: 100%;
+    background: #dfdfdf;
+    border: none;
+    border-radius: 20px;
+}
+
+.header-busca button {
+    background: #ED3237;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    height: 50px;
+    padding: 20px;
+    font-family: "Luckiest Guy", sans-serif;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-busca button p {
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.header-busca button:hover {
+    background-color: #d02b30;
+    transition: all .3s
+}
+
+
+
+.usuarios-filtrados {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.usuarios-filtrados p {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.card-filtrado{
+    background-color: #313379;
+    width: 100%;
+    padding: 30px;
+    border-radius: 50px;
+}
+
+.buttons-card-filtrado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.botao-verde, .botao-vermelho {
+    width: 100%;
+}
+
+.botao-verde button {
+    background: #2dd733;
+}
+
+.botao-verde button:hover{
+    background-color: #27bf2c;
+    transition: all .3s
+}
+
+.botao-vermelho button {
+    background: #ED3237;
+    padding: 10px;
+}
+
+.botao-vermelho button:hover{
+    background-color: #d02b30;
+    transition: all .3s
+}
+
+.buttons-card-filtrado button {
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    height: 50px;
+    width: 100%;
+    font-family: "Luckiest Guy", sans-serif;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-card-filtrado button p {
+    margin-top: 17px;
+    font-size: 25px;
+}
+
+.buttons-card-filtrado button:hover {
+    
+}
+
+
+
+
 footer {
     background: #ED3237;
     width: 100%;

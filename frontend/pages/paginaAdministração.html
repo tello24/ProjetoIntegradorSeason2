@@ -32,7 +32,68 @@
     <main id="content">
 
         <section id="usuarios">
-             
+            <div class="titulo-usuarios">
+                <p>Usuários</p>
+            </div>
+
+            <div class="cards">
+                <div class="card-cadastro">
+                    <div class="titulo-cadastro">
+                        <p>Cadastro de Usuários</p>
+                    </div>
+                    <div class="inputs-cadastro">
+                        <div class="titulo-input-card">
+                            <p>Nome:</p>
+                        </div>
+                        <input type="text" id="login" placeholder="Digite seu Usuário">
+                        <div class="titulo-input-card">
+                            <p>Email:</p>
+                        </div>
+                        <input type="email" id="email" placeholder="Digite seu Email">
+                        <div class="titulo-input-card">
+                            <p>Senha:</p>
+                        </div>
+                        <input type="text" id="psw" placeholder="Digite sua Senha">
+                    </div>
+                    <button type="button"><p>Cadastrar</p></button>
+                </div>
+                <div class="card-busca-usuarios">
+                    <div class="header-busca">
+                        <p>Usuário:</p>
+                        <div class="header-busca-inputs">
+                            <input type="text" id="busca-nome">
+                            <button type="button"><p>Buscar</p></button>
+                        </div>
+                    </div>
+                    <div class="usuarios-filtrados">
+                        <div class="card-filtrado">
+                            <p>Nome:</p>
+                            <p>Email:</p>
+                            <div class="buttons-card-filtrado">
+                                <div class="botao-verde">
+                                    <button type="button" class="botao-verde"><p>Editar</p></button>
+                                </div>
+                                <div class="botao-vermelho">
+                                    <button type="button" class="botao-vermelho"><p>Remover</p></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-filtrado">
+                            <p>Nome:</p>
+                            <p>Email:</p>
+                            <div class="buttons-card-filtrado">
+                                <div class="botao-verde">
+                                    <button type="button" class="botao-verde"><p>Editar</p></button>
+                                </div>
+                                <div class="botao-vermelho">
+                                    <button type="button" class="botao-vermelho"><p>Remover</p></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <section id="conteudo">
@@ -54,7 +115,7 @@
         </div>
     </footer>
 
-    <script src="./../script/script.js"></script>
+    <script src="./../script/administracao.js"></script>
     <script src="https://kit.fontawesome.com/20e4dde64c.js" crossorigin="anonymous"></script>
 
 </body>
