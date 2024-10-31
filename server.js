@@ -19,9 +19,19 @@ async function conectarAoMongo() {
     }
 }
 
+mongoose.connection.on('connected', () => {
+    console.log('Conectado ao MongoDB com sucesso');
+});
+
+mongoose.connection.on('error', (err) => {
+    console.error('Erro na conexão com o MongoDB:', err.message);
+});
+
+
 // Modelo do Usuário
 const userSchema = new mongoose.Schema({
-    login: { type: String, required: true },
+    nome: { type: String, required: true },
+    email: { type: String, required: true },
     senha: { type: String, required: true }
 });
 
@@ -39,17 +49,20 @@ app.get('/login', async (req, res) => {
 });
 
 
-app.post('/login', async (req, res) => {
-    const { login, senha } = req.body;
+app.post('/cadastrar', async (req, res) => {
+    const { nome, email, senha } = req.body;
 
     try {
-        const novoUsuario = new User({ login, senha });
-        await novoUsuario.save();
-        res.json(novoUsuario);
+        const novoUsuario = new User({ nome, email, senha });
+        const resultado = await novoUsuario.save();
+        console.log("Usuário criado com sucesso:", resultado);
+        res.json(resultado);
     } catch (error) {
-        res.status(400).json({ error: 'Erro ao criar usuário', details: error });
+        console.error("Erro ao salvar o usuário:", error.message);
+        res.status(400).json({ error: 'Erro ao criar usuário', details: error.message });
     }
 });
+
 
 // Iniciar o servidor e conectar ao MongoDB
 app.listen(8000, async () => {

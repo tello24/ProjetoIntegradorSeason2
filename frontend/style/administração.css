@@ -69,7 +69,6 @@ header a {
 #usuarios {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -97,6 +96,8 @@ header a {
     align-items: center;
     gap: 30px;
 }
+
+
 
 .card-cadastro {
     display: flex;
@@ -135,11 +136,12 @@ header a {
 
 .inputs-cadastro input {
     margin-bottom: 20px;
-    height: 50px;
-    width: 70%;
+    height: 30px;
+    width: 60%;
     background: #dfdfdf;
     border: none;
     border-radius: 20px;
+    padding: 20px;
 }
 
 .card-cadastro button {
@@ -197,11 +199,11 @@ header a {
 
 .header-busca input {
     margin-bottom: 20px;
-    height: 50px;
     width: 100%;
     background: #dfdfdf;
     border: none;
     border-radius: 20px;
+    padding: 20px;
 }
 
 .header-busca button {
@@ -210,7 +212,7 @@ header a {
     color: #fff;
     border-radius: 20px;
     height: 50px;
-    padding: 20px;
+    padding: 28px;
     font-family: "Luckiest Guy", sans-serif;
     cursor: pointer;
     display: flex;
@@ -260,11 +262,11 @@ header a {
 }
 
 .botao-verde button {
-    background: #2dd733;
+    background: #3ac33f;
 }
 
 .botao-verde button:hover{
-    background-color: #27bf2c;
+    background-color: #22af27;
     transition: all .3s
 }
 
@@ -295,11 +297,6 @@ header a {
     margin-top: 17px;
     font-size: 25px;
 }
-
-.buttons-card-filtrado button:hover {
-    
-}
-
 
 
 
