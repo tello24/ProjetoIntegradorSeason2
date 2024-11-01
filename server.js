@@ -33,7 +33,7 @@ mongoose.connection.on('error', (err) => {
 // Modelo do Usuário
 const userSchema = new mongoose.Schema({
     nome: { type: String, required: true },
-    email: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
     senha: { type: String, required: true }
 });
 
@@ -55,7 +55,8 @@ app.post('/cadastrar', async (req, res) => {
     const { nome, email, senha } = req.body;
 
     try {
-        const novoUsuario = new User({ nome, email, senha });
+        const senhaCriptografada = await bcrypt.hash(senha, 10)
+        const novoUsuario = new User({ nome, email, senha: senhaCriptografada });
         const resultado = await novoUsuario.save();
         console.log("Usuário criado com sucesso:", resultado);
         res.json(resultado);
