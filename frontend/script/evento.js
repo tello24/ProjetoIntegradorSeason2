@@ -3,7 +3,7 @@ function mostrarLista() {
   
     // Verifica se a lista está visível e alterna a visibilidade
     if (lista.style.display === "none") {
-      lista.style.display = "block";
+      lista.style.display = "flex";
     } else {
       lista.style.display = "none";
     }

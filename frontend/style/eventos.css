@@ -47,7 +47,7 @@ header a {
 :root{
     --orange-color: #da722c
 }
-img{
+.eventos-tela img{
     height: 370px;
     filter: drop-shadow(0px 4px 8px rgba(0,0,0.25));
     border-radius: 12px;
@@ -74,31 +74,39 @@ img{
 }
 
 #minhaLista {
-  display: none;
-  margin-top: 30px;
-}
-
-#minhaLista {
-  display: none;
+  display: flex;
   margin-top: 10px;
   background-color: #8DA5ED;
   border-radius: 25px;
-  width: 500px;
-  height: 500px;
-  padding: 20px; /* Espaço interno para dar margem da borda */
-  box-sizing: border-box; /* Inclui padding dentro do width/height */
-  text-align: center; /* Centraliza o texto */
+  width: 1550px;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 40px;
 }
 
-#minhaLista ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  width: 100%; /* Garante que a lista ocupe o espaço disponível */
+#minhaLista .texto {
+  flex: 1;
+  padding-right: 20px;
 }
 
-#minhaLista li {
-  padding: 10px 0; /* Ajuste o espaço entre os itens da lista */
+#minhaLista img {
+  display: flex;
+  align-items: center;
+  height: 250px;
+  /* filter: drop-shadow(0px 4px 8px rgba(0,0,0.25)); */
+  border-radius: 12px;
+}
+.testeTesao{
+  display: flex;
+}
+.testeTexto{
+  display: flex;
+}
+.conjuntoTesao{
+  padding: 30px;
+}
+.conjuntoTexto{
+  padding: 30px;
 }
 
 
@@ -164,3 +172,4 @@ footer {
   justify-content: center;
   align-items: center;
 } 
+
