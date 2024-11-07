@@ -12,7 +12,6 @@ function nextImage() {
     }
 
     document.getElementById("radio" + count).checked = true
-
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -22,4 +21,22 @@ document.addEventListener('DOMContentLoaded', function() {
     logo.addEventListener('click', function() {
         lista.classList.toggle('visible');
     });
+    
+    const popup = document.getElementById('popup');
+    const closePopupBtn = document.getElementById('closePopup');
+    let popupTimeout;
+
+    function showPopup() {
+        popup.style.display = 'block';
+        popupTimeout = setTimeout(hidePopup, 15000); 
+    }
+
+    function hidePopup() {
+        popup.style.display = 'none';
+        clearTimeout(popupTimeout);
+    }
+
+    closePopupBtn.addEventListener('click', hidePopup);
+
+    setTimeout(showPopup, 1000);
 });
