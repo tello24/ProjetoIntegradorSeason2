@@ -1,10 +1,10 @@
 const protocolo = 'http://';
-const baseURL = 'localhost:3002';
+const baseURL = 'localhost:8000';
 const loginEndPoint = '/login';
 
 async function verificaLogin() {
     // Pega os valores dos inputs de login e senha
-    const login = document.getElementById('login').value;
+    const email = document.getElementById('email').value;
     const psw = document.getElementById('psw').value;
 
     const URLCompleta = `${protocolo}${baseURL}${loginEndPoint}`;
@@ -18,7 +18,7 @@ async function verificaLogin() {
         console.log('Usuários retornados:', usuarios); // <-- Adicione esta linha aqui
 
         // Verifica se existe um usuário com as credenciais fornecidas
-        const usuarioValido = usuarios.find(user => user.login === login && user.psw === psw);
+        const usuarioValido = usuarios.find(user => user.email === email && user.psw === psw);
 
         if (usuarioValido) {
             console.log('Login aceito');
