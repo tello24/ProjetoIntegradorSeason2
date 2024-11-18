@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cadastrarButton.addEventListener('click', async () => {
         const nome = document.getElementById('nome').value;
         const email = document.getElementById('email').value;
-        const senha = document.getElementById('psw').value;
+        const senha = document.getElementById('senha').value;
 
         if (!nome || !email || !senha) {
             alert("Por favor, preencha todos os campos.");
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert(`Usuário ${usuarioCadastrado.nome} cadastrado com sucesso!`);
                 document.getElementById('nome').value = '';
                 document.getElementById('email').value = '';
-                document.getElementById('psw').value = '';
+                document.getElementById('senha').value = '';
             } else {
                 const errorData = await response.json();
                 alert(`Erro ao cadastrar usuário: ${errorData.error}`);

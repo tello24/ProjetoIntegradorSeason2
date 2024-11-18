@@ -40,31 +40,70 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 // Rotas
-app.get('/login', async (req, res) => {
-    try {
-        // Busca todos os usuários, mas omite o campo senha
-        const users = await User.find({});
-        res.json(users); // Retorna a lista de usuários
-    } catch (error) {
-        res.status(500).json({ error: 'Erro ao buscar usuários', details: error });
+// app.get('/login', async (req, res) => {
+//     try {
+//         // Busca todos os usuários, mas omite o campo senha
+//         const users = await User.find({});
+//         const { email, senha } = req.body
+//         res.json( users, email, senha ); // Retorna a lista de usuários
+//     } catch (error) {
+//         res.status(500).json({ error: 'Erro ao buscar usuários', details: error });
+//     }
+// });
+
+
+// app.post('/login', async (req, res) => {
+//     const { email, senha } = req.body;
+
+//     if (!email || !senha) {
+//         return res.status(400).json({ mensagem: "Email e senha são obrigatórios!" });
+//     }
+
+//     try {
+//         const usuarioExiste = await User.findOne({ email });
+//         if (!usuarioExiste) {
+//             return res.status(401).json({ mensagem: "Email não encontrado." });
+//         }
+
+//         const senhaValida = await bcrypt.compare(senha, usuarioExiste.senha);
+//         if (!senhaValida) {
+//             return res.status(401).json({ mensagem: "Senha inválida!" });
+//         }
+
+//         res.status(200).json({
+//             mensagem: "Login realizado com sucesso!",
+//             nome: usuarioExiste.nome,
+//             email: usuarioExiste.email,
+//         });
+//     } catch (error) {
+//         console.error('Erro no login:', error);
+//         res.status(500).json({ mensagem: "Erro no servidor.", details: error.message });
+//     }
+// });
+
+app.post('/Login', async (req, res) => {
+
+    const email = req.body.email
+    const senha = req.body.senha
+
+    const usuarioExiste = await User.findOne({ email: email })
+    if (!usuarioExiste) {
+        return res.status(401).json({ mensagem: "Email inválido" })
     }
-});
 
-
-app.post('/cadastrar', async (req, res) => {
-    const { nome, email, senha } = req.body;
-
-    try {
-        const senhaCriptografada = await bcrypt.hash(senha, 10)
-        const novoUsuario = new User({ nome, email, senha: senhaCriptografada });
-        const resultado = await novoUsuario.save();
-        console.log("Usuário criado com sucesso:", resultado);
-        res.json(resultado);
-    } catch (error) {
-        console.error("Erro ao salvar o usuário:", error.message);
-        res.status(400).json({ error: 'Erro ao criar usuário', details: error.message });
+    const senhaValida = await bcrypt.compare (senha, usuarioExiste.senha)
+    if (!senhaValida) {
+        return res.status(401).json({ mensagem: "Senha inválida" })
     }
-});
+
+    const token = jwt.sign (
+        { email: usuarioExiste.email },
+        "1234",
+        { expiresIn: "1h" }
+    )
+    res.status(200).json({ token: token })
+
+})
 
 
 // Iniciar o servidor e conectar ao MongoDB
