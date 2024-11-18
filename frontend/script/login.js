@@ -54,8 +54,8 @@ const verificaLogin = async () => {
             loginSenhaInput.value = ""
 
             alert("Login Realizado com sucesso!!")
-            // const cadastrarFilmeButton = document.querySelector('#cadastrarFilmeButton')
-            // cadastrarFilmeButton.disabled = false
+            const loginButton = document.querySelector('#paginaAdministracao')
+            loginButton.style.display = 'block' 
             // const loginLink = document.querySelector("#loginLink")
             // loginLink.innerHTML = 'Logout'
 
