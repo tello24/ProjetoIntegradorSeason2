@@ -39,6 +39,7 @@ header img {
 header ul {
     display: flex;
     list-style: none;
+    cursor: pointer;
 }
 
 header li {
@@ -81,10 +82,9 @@ header a {
     margin-top: 120px;
 }
 
-.titulo-usuarios p {
+.titulo-usuarios h2 {
     font-size: 50px;
-    padding: 20px 40px;
-    margin-top: 12px;
+    padding: 40px;
     color: white;
 }
 
@@ -160,9 +160,6 @@ header a {
     margin-top: 10px;
 }
 
-.card-cadastro button p {
-    margin-top: 5px;
-}
 
 .card-cadastro button:hover {
     background-color: #d02b30;
@@ -220,9 +217,8 @@ header a {
     align-items: center;
 }
 
-.header-busca button p {
-    margin-top: 5px;
-    font-size: 20px;
+.header-busca button {
+    font-size: 25px;
 }
 
 .header-busca button:hover {
@@ -293,8 +289,7 @@ header a {
     align-items: center;
 }
 
-.buttons-card-filtrado button p {
-    margin-top: 17px;
+.buttons-card-filtrado button {
     font-size: 25px;
 }
 
