@@ -1,79 +1,74 @@
 * {
-  margin: 0;
-  padding: 0;
-}
-
+    margin: 0;
+    padding: 0;
+  }
+  
 body {
-  font-family: "Luckiest Guy", serif;
-  background-image: url(./../IMAGENS/Background.png);
-  background-size: contain;
-  height: 100vh;
-}
+    font-family: "Luckiest Guy", serif;
+    background-image: url(./../IMAGENS/Background.png);
+    background-size: contain;
+  }
 
 header {
-  background-color: #3E4096;
-  width: 100%;
-  height: 8%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: fixed;
-  z-index: +10;
-}
-
+    background-color: #3E4096;
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    z-index: +10;
+  }
+  
 header img {
-  max-height: 70%;
-  padding: 10px;
-}
-
+    max-height: 70%;
+    padding: 10px;
+  }
+  
 header ul {
-  display: flex;
-  list-style: none;
-}
-
+    display: flex;
+    list-style: none;
+  }
+  
 header li {
-  margin-right: 25px;
-  font-size: 1.4rem;
-  transition: all ease .3s;
-}
-
+    margin-right: 25px;
+    font-size: 1.4rem;
+    transition: all ease .3s;
+  }
+  
 header li:hover {
-  border-bottom: 2px solid #ffff;
-}
-
+    border-bottom: 2px solid #ffff;
+  }
+  
 header a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
+  }
+:root{
+    --orange-color: #da722c
 }
-
-:root {
-  --orange-color: #da722c
+.eventos-tela img{
+    height: 370px;
+    border-radius: 12px;
+    display: flex;
+    
 }
-
-.eventos-tela img {
-  height: 370px;
-  border-radius: 12px;
-  display: flex;
-
+.btn{
+    padding: 16px 32px;
+    border-radius: 24px;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    background: var(--orange-color);
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-
-.btn {
-  padding: 16px 32px;
-  border-radius: 24px;
-  color: rgb(255, 255, 255);
-  display: inline-block;
-  font-weight: bold;
-  font-size: 18px;
-  text-decoration: none;
-  background: var(--orange-color);
-  margin-top: 20px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.button:active {
+.button:active{
   transform: scale(0.96);
 }
 
@@ -83,7 +78,6 @@ header a {
   background-color: #8DA5ED;
   border-radius: 25px;
   width: 1550px;
-  height: 100%;
   padding: 20px;
   box-sizing: border-box;
   gap: 40px;
@@ -100,75 +94,72 @@ header a {
   height: 250px;
   /* filter: drop-shadow(0px 4px 8px rgba(0,0,0.25)); */
   border-radius: 12px;
+  
 }
-
-.testeTesao {
+.testeTextao{
   display: flex;
 }
-
-.testeTexto {
+.testeTexto{
   display: flex;
 }
-
-.conjuntoTesao {
+.conjuntoTextao{
   padding: 30px;
+  margin-right: 20px;
+  gap: 20px;
 }
-
-.conjuntoTexto {
+.conjuntoTexto{
   padding: 30px;
-  row-gap: 50px;
+  
 }
 
-.eventos {
-  /* background-color: #8DA5ED; */
-  padding: 90px;
+
+
+.eventos{
+    /* background-color: #8DA5ED; */
+    padding: 90px;
+}
+.eventos h1{
+    text-align: center;
+    padding: 40px;
+    
 }
 
-.eventos h1 {
-  text-align: center;
-  padding: 40px;
-
-}
-
-.eventos .eventos-telas {
+.eventos .eventos-telas{
   display: flex;
   gap: 73px;
   justify-content: center;
   align-items: center;
 }
-
-.eventos .eventos-tela {
+.eventos .eventos-tela{
   background: #8DA5ED;
   border-radius: 12px;
   padding: 20px 32px;
 }
 
-.info {
+.info{
   font-size: xx-large;
   display: flex;
   justify-content: center;
   padding: 12px;
 }
 
-.light {
+.light{
   color: rgb(0, 0, 0);
-  font-size: x-large;
+  font-size:x-large;
   text-align: center;
   /* filter: drop-shadow(0px 4px 8px rgba(0,0,0.25)); */
 }
-
-.light {
+.light{
   background-color: #8DA5ED;
   margin-bottom: 60px;
   border-radius: 10px;
   padding: 20px;
 }
-
-.wrapper {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+.wrapper{
+justify-content: center;
+align-items: center;
+display: flex;
+flex-direction: column;
 }
 
 
@@ -183,4 +174,5 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} 
+
