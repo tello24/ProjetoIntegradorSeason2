@@ -1,24 +1,14 @@
 async function prepararPagina() {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
+    const loginLink = document.querySelector('#loginLink');
+    const loginButton = document.querySelector('#paginaAdministracao');
 
     if (token) {
-        // Decodificar o token para extrair informações
-        const payloadBase64 = token.split('.')[1];
-        const payload = JSON.parse(atob(payloadBase64));
-
-        // Verifique se os elementos existem antes de manipulá-los
-        const loginButton = document.querySelector('#paginaAdministracao');
-        const sairButton = document.querySelector('#sairButton');
-
-        if (loginButton) {
-            loginButton.style.display = 'block';
-        }
-
-        if (sairButton) {
-            sairButton.style.display = 'block';
-        }
-
-        console.log(`Usuário logado: ${payload.email}`);
+        loginButton.style.display = 'block';  
+        loginLink.innerHTML = 'Sair';
+    } else {
+        loginButton.style.display = 'none';
+        loginLink.innerHTML = 'Login';
     }
 }
 
