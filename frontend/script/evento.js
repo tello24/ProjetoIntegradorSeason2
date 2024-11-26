@@ -1,3 +1,13 @@
+async function prepararPagina() {
+  const token = localStorage.getItem("token")
+
+  if (token) {
+      const loginButton = document.querySelector('#paginaAdministracao')
+      loginButton.style.display = 'block' 
+  }
+
+}
+
 function mostrarLista() {
     const lista = document.getElementById("minhaLista");
   

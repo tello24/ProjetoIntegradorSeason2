@@ -3,8 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,7 +16,7 @@
     <title>Home</title>
 </head>
 
-<body>
+<body onload="prepararPagina()">
 
     <header>
         <img id="header-logo" src="./../IMAGENS/LOGO.png">
@@ -23,7 +26,8 @@
             <li><a href="">Saúde e Bem-Estar</a></li>
             <li><a href="./paginaContato.html">Contato</a></li>
             <li><a href="./paginaEventos.html">Eventos</a></li>
-            <li><a href="./paginaLogin.html">Login</a></li>
+            <li id="paginaAdministracao" style="display: none;"><a href="./paginaAdministração.html">Administração</a></li>
+            <li><a href="./paginaLogin.html" id="loginLink">Login</a></li>
         </ul>
     </header>
 
@@ -37,7 +41,7 @@
                         <input type="radio" name="radio-btn" id="radio1">
                         <input type="radio" name="radio-btn" id="radio2">
                         <input type="radio" name="radio-btn" id="radio3">
-        
+
                         <!--Imagens Slide-->
                         <div class="slide primeiro">
                             <img src="./../IMAGENS/IMG_1854.jpeg">
@@ -48,7 +52,7 @@
                         <div class="slide">
                             <img src="./../IMAGENS/IMG_4071.jpeg" class="img2">
                         </div>
-        
+
                         <!--Auto navegação-->
                         <div class="navigation-auto">
                             <div class="auto-btn1"></div>
@@ -68,13 +72,27 @@
                         <p>E-mail</p>
                         <input type="text" id="email" placeholder="Digite seu e-mail">
                         <p>Senha</p>
-                        <input type="text" id="psw" placeholder="Digite sua senha">
-                        <button type="button" onclick="verificaLogin()"><p>Acessar</p></button>
+                        <input type="password" id="senha" placeholder="Digite sua senha">
+                        <button type="button" onclick="verificaLogin()">
+                            <p>Acessar</p>
+                        </button>
                     </div>
                 </form>
             </div>
 
         </div>
+
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+
     </div>
 
     <footer>

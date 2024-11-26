@@ -19,7 +19,7 @@
     <link rel="icon" type="image/png" href="/frontend/IMAGENS/LOGO.png">
     <title>Passatempo Contato</title>
 </head>
-<body>
+<body onload="prepararPagina()">
     
     <header>
         <img id="header-logo" src="./../IMAGENS/LOGO.png">
@@ -30,6 +30,7 @@
             <li><a href="./paginaContato.html">Contato</a></li>
             <li><a href="./paginaEventos.html">Eventos</a></li>
             <li><a href="./paginaLogin.html">Login</a></li>
+            <li id="paginaAdministracao" style="display: none;"><a href="./paginaAdministração.html">Administração</a></li>
         </ul>
     </header>
 
@@ -56,6 +57,18 @@
             <p>R. Demóstenes, 1209 - Campo Belo</p>
             <div id="map"></div>
         </div>
+
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+
     </div>
 
     <footer>

@@ -1,3 +1,13 @@
+async function prepararPagina() {
+    const token = localStorage.getItem("token")
+
+    if (token) {
+        const loginButton = document.querySelector('#paginaAdministracao')
+        loginButton.style.display = 'block' 
+    }
+
+}
+
 let count = 1
 document.getElementById("radio1").checked = true
 

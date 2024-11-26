@@ -2,56 +2,79 @@ const protocolo = 'http://';
 const baseURL = 'localhost:8000';
 const loginEndPoint = '/login';
 
-async function verificaLogin() {
-    // Pega os valores dos inputs de login e senha
-    const email = document.getElementById('email').value;
-    const psw = document.getElementById('psw').value;
+async function prepararPagina() {
+    const token = localStorage.getItem('token');
+    const loginLink = document.querySelector('#loginLink');
+    const loginButton = document.querySelector('#paginaAdministracao');
 
-    const URLCompleta = `${protocolo}${baseURL}${loginEndPoint}`;
+    if (token) {
+        loginButton.style.display = 'block';  
+        loginLink.innerHTML = 'Sair';
+    } else {
+        loginButton.style.display = 'none';
+        loginLink.innerHTML = 'Login';
+    }
+}
 
-    try {
-        // Faz uma requisição ao endpoint de login (que retorna todos os usuários)
-        const response = await axios.get(URLCompleta);
-        const usuarios = response.data; // Isso é um array de usuários
+const verificaLogin = async () => {
+    const loginEmailInput = document.getElementById('email');
+    const loginEmail = loginEmailInput.value;
 
-        // Log para verificar o que a API está retornando
-        console.log('Usuários retornados:', usuarios); // <-- Adicione esta linha aqui
+    const loginSenhaInput = document.getElementById('senha');
+    const loginSenha = loginSenhaInput.value;
 
-        // Verifica se existe um usuário com as credenciais fornecidas
-        const usuarioValido = usuarios.find(user => user.email === email && user.psw === psw);
+    if (loginEmail && loginSenha) {
+        try {
+            const URLCompleta = `${protocolo}${baseURL}${loginEndPoint}`;
+            const response = await axios.post(URLCompleta, {
+                email: loginEmail,
+                senha: loginSenha,
+            });
 
-        if (usuarioValido) {
-            console.log('Login aceito');
-        } else {
-            console.log('Login ou senha incorretos');
+            localStorage.setItem('token', response.data.token);
+
+            loginEmailInput.value = '';
+            loginSenhaInput.value = '';
+
+            alert('Login realizado com sucesso!');
+            const loginButton = document.querySelector('#paginaAdministracao');
+            loginButton.style.display = 'block';
+            const loginLink = document.querySelector('#loginLink');
+            loginLink.innerHTML = 'Sair';
+        } catch (e) {
+            alert('Falha na autenticação');
         }
-    } catch (error) {
-        console.error('Erro ao verificar o login:', error);
+    } else {
+        alert('Preencha todos os campos!!!');
     }
-}
+};
 
-let count = 1
-document.getElementById("radio1").checked = true
+const logout = () => {
+    localStorage.removeItem('token');
+    alert('Logout realizado com sucesso!');
+    const loginLink = document.querySelector('#loginLink');
+    loginLink.innerHTML = 'Login';
+    const loginButton = document.querySelector('#paginaAdministracao');
+    loginButton.style.display = 'none'; 
+};
 
-setInterval(function() {
-    nextImage()
-}, 4000)
-
-function nextImage() {
-    count ++
-    if( count > 4 ) {
-        count = 1
+document.querySelector('#loginLink').addEventListener('click', function (e) {
+    e.preventDefault();
+    if (localStorage.getItem('token')) {
+        logout();
+    } else {
+        window.location.href = '/login'; // Redireciona para a página de login
     }
+});
 
-    document.getElementById("radio" + count).checked = true
-
-}
-
-document.addEventListener('DOMContentLoaded', function() {
+// Alterne a exibição do menu
+document.addEventListener('DOMContentLoaded', function () {
     const logo = document.getElementById('header-logo');
     const lista = document.querySelector('.lista');
 
-    logo.addEventListener('click', function() {
+    logo.addEventListener('click', function () {
         lista.classList.toggle('visible');
     });
+
+    prepararPagina(); // Inicializa a página
 });

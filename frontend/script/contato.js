@@ -1,3 +1,13 @@
+async function prepararPagina() {
+    const token = localStorage.getItem("token")
+
+    if (token) {
+        const loginButton = document.querySelector('#paginaAdministracao')
+        loginButton.style.display = 'block' 
+    }
+
+}
+
 var map = L.map('map').setView([-23.61995230868037, -46.66903327422016], 16);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
