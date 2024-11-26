@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+body {
+    font-family: "Luckiest Guy", serif;
+    background-image: url(./../IMAGENS/Background.png);
+    background-size: contain;
+  }
+
+header {
+    background-color: #3E4096;
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    z-index: +10;
+  }
+  
+header img {
+    max-height: 70%;
+    padding: 10px;
+  }
+  
+header ul {
+    display: flex;
+    list-style: none;
+  }
+  
+header li {
+    margin-right: 25px;
+    font-size: 1.4rem;
+    transition: all ease .3s;
+  }
+  
+header li:hover {
+    border-bottom: 2px solid #ffff;
+  }
+  
+header a {
+    color: white;
+    text-decoration: none;
+  }
+:root{
+    --orange-color: #da722c
+}
+.titulo{
+    background-color: #8DA5ED;
+    color: rgb(0, 0, 0);
+    font-size:xx-large;
+    text-align: center;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 1140px;
+    height: 30px;
+}
+.eventos{
+    /* background-color: #8DA5ED; */
+    padding: 90px;
+}
+.eventos h1{
+    text-align: center;
+    padding: 40px;
+    
+}
+
+.eventos .eventos-telas{
+  display: flex;
+  gap: 73px;
+  justify-content: center;
+  align-items: center;
+}
+.eventos .eventos-tela{
+  background: #8DA5ED;
+  border-radius: 12px;
+  padding: 20px 32px;
+}
+
+.info{
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+
+.light{
+  color: rgb(0, 0, 0);
+  font-size:x-large;
+  text-align: center;
+  /* filter: drop-shadow(0px 4px 8px rgba(0,0,0.25)); */
+}
+.light{
+  background-color: #8DA5ED;
+  margin-bottom: 60px;
+  border-radius: 10px;
+  padding: 20px;
+}
+.wrapper{
+justify-content: center;
+align-items: center;
+display: flex;
+flex-direction: column;
+}
+footer {
+  background: #ED3237;
+  width: 100%;
+  height: 7%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
