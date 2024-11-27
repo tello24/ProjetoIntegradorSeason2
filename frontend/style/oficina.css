@@ -52,8 +52,8 @@ header a {
 }
 
 .titulo {
-  background-color: #F4DD2B;
-  color: rgb(0, 0, 0);
+  background-color: #EB6D0B;
+  color: rgb(255, 255, 255);
   font-size: xx-large;
   text-align: center;
   margin-bottom: 3.75rem; /* 60px */
@@ -94,15 +94,17 @@ header a {
 }
 
 .light{
-  color: rgb(255, 255, 255);
-  font-size: 3rem;
+  color: rgb(0, 0, 0);
+  font-size: 1.8rem;
   text-align: center;
-  background-color: #ED3237;
+  background-color: #8DA5ED  ;
   margin-bottom: 3.75rem; /* 60px */
   border-radius: 0.625rem; /* 10px */
   padding: 1.25rem; /* 20px */
   margin-top: 4rem;
   width: 100rem;
+  font-family: Roboto;
+  font-weight: 600;
 }
 
 .wrapper {
@@ -130,7 +132,7 @@ footer {
   align-items: center;
   justify-content: space-between;
   border-radius: 1.25rem; /* 20px */
-  background: #8DA5ED;
+  background: #E68183;
   margin: 3.125rem auto 0 auto; /* 50px */
   padding: 2.5rem; /* 40px */
   padding-top: 7.8125rem; /* 125px */
