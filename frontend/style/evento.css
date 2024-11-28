@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Luckiest Guy", serif;
+  background-image: url(./../IMAGENS/Background.png);
+  background-size: contain;
+  font-size: 1rem;
+}
+
+header {
+  background-color: #3E4096;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+}
+
+header img {
+  max-height: 70%;
+  padding: 0.625rem; /* 10px */
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+}
+
+header li {
+  margin-right: 1.5625rem; /* 25px */
+  font-size: 1.4rem;
+  transition: all ease 0.3s;
+}
+
+header li:hover {
+  border-bottom: 0.125rem solid #fff; /* 2px */
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+:root {
+  --orange-color: #da722c;
+}
+
+.titulo {
+  background-color: #F4DD2B;
+  color: rgb(0, 0, 0);
+  font-size: xx-large;
+  text-align: center;
+  margin-bottom: 3.75rem; /* 60px */
+  border-radius: 0.625rem; /* 10px */
+  padding: 1.25rem; /* 20px */
+  width: 71.25rem; /* 1140px */
+  height: 1.875rem; /* 30px */
+  margin-top: 3.88rem;
+}
+
+.eventos {
+  padding: 5.625rem; /* 90px */
+}
+
+.eventos h1 {
+  text-align: center;
+  padding: 2.5rem; /* 40px */
+}
+
+.eventos .eventos-telas {
+  display: flex;
+  gap: 4.5625rem; /* 73px */
+  justify-content: center;
+  align-items: center;
+}
+
+.eventos .eventos-tela {
+  background: #8DA5ED;
+  border-radius: 0.75rem; /* 12px */
+  padding: 1.25rem 2rem; /* 20px 32px */
+}
+
+.info {
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem; /* 12px */
+}
+
+.light{
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  text-align: center;
+  background-color: #ED3237;
+  margin-bottom: 3.75rem; /* 60px */
+  border-radius: 0.625rem; /* 10px */
+  padding: 1.25rem; /* 20px */
+  margin-top: 4rem;
+  width: 100rem;
+}
+
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background: #ED3237;
+  width: 100%;
+  height: 7%;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1 {
+  display: flex;
+  height: 9.375rem; /* 150px */
+  max-width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  background: #8DA5ED;
+  margin: 3.125rem auto 0 auto; /* 50px */
+  padding: 2.5rem; /* 40px */
+  padding-top: 7.8125rem; /* 125px */
+  padding-bottom: 7.8125rem; /* 125px */
+  font-size: 1.555rem; /* 29px */
+  margin-top: -3rem;
+}
+img {
+  height: 21.875rem; /* 350px */
+  border-radius: 0.625rem; /* 10px */
+}
+.box2{
+  display: flex;
+  height: 9.375rem; /* 150px */
+  max-width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  background: #8DA5ED;
+  margin: 3.125rem auto 0 auto; /* 50px */
+  padding: 2.5rem; /* 40px */
+  padding-top: 7.8125rem; /* 125px */
+  padding-bottom: 7.8125rem; /* 125px */
+  font-size: 1.555rem; /* 29px */
+}
+.box3{
+  display: flex;
+  height: 9.375rem; /* 150px */
+  max-width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  background: #8DA5ED;
+  margin: 3.125rem auto 0 auto; /* 50px */
+  padding: 2.5rem; /* 40px */
+  padding-top: 7.8125rem; /* 125px */
+  padding-bottom: 7.8125rem; /* 125px */
+  font-size: 1.555rem; /* 29px */
+}
+
+.box4 {
+  display: flex;
+  height: 9.375rem; /* 150px */
+  max-width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  background: #8DA5ED;
+  margin: 3.125rem auto 0 auto; /* 50px */
+  padding: 2.5rem; /* 40px */
+  padding-top: 7.8125rem; /* 125px */
+  padding-bottom: 7.8125rem; /* 125px */
+  font-size: 1.100rem; /* 29px */
+  margin-top: 3rem;
+}
+.box5 {
+  display: flex;
+  height: 9.375rem; /* 150px */
+  max-width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  background: #8DA5ED;
+  margin: 3.125rem auto 0 auto; /* 50px */
+  padding: 2.5rem; /* 40px */
+  padding-top: 7.8125rem; /* 125px */
+  padding-bottom: 7.8125rem; /* 125px */
+  font-size: 1.555rem; /* 29px */
+}
+.box6 {
+  display: flex;
+  height: 9.375rem; /* 150px */
+  max-width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  background: #8DA5ED;
+  margin: 3.125rem auto 0 auto; /* 50px */
+  padding: 2.5rem; /* 40px */
+  padding-top: 7.8125rem; /* 125px */
+  padding-bottom: 7.8125rem; /* 125px */
+  font-size: 1.200rem; /* 29px */
+}
+.box7 {
+  display: flex;
+  height: 9.375rem; /* 150px */
+  max-width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  background: #8DA5ED;
+  margin: 3.125rem auto 0 auto; /* 50px */
+  padding: 2.5rem; /* 40px */
+  padding-top: 7.8125rem; /* 125px */
+  padding-bottom: 7.8125rem; /* 125px */
+  font-size: 1.555rem; /* 29px */
+}
+.box8 {
+  display: flex;
+  height: 9.375rem; /* 150px */
+  max-width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  background: #8DA5ED;
+  margin: 3.125rem auto 0 auto; /* 50px */
+  padding: 2.5rem; /* 40px */
+  padding-top: 7.8125rem; /* 125px */
+  padding-bottom: 7.8125rem; /* 125px */
+  font-size: 1.555rem; /* 29px */
+}
+.box9 {
+  display: flex;
+  height: 9.375rem; /* 150px */
+  max-width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  background: #8DA5ED;
+  margin: 3.125rem auto 0 auto; /* 50px */
+  padding: 2.5rem; /* 40px */
+  padding-top: 7.8125rem; /* 125px */
+  padding-bottom: 7.8125rem; /* 125px */
+  font-size: 1.555rem; /* 29px */
+}
+.box10 {
+  display: flex;
+  height: 9.375rem; /* 150px */
+  max-width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  background: #8DA5ED;
+  margin: 3.125rem auto 0 auto; /* 50px */
+  padding: 2.5rem; /* 40px */
+  padding-top: 7.8125rem; /* 125px */
+  padding-bottom: 7.8125rem; /* 125px */
+  font-size: 1.555rem; /* 29px */
+}
+.box11 {
+  display: flex;
+  height: 9.375rem; /* 150px */
+  max-width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  background: #8DA5ED;
+  margin: 3.125rem auto 0 auto; /* 50px */
+  padding: 2.5rem; /* 40px */
+  padding-top: 7.8125rem; /* 125px */
+  padding-bottom: 7.8125rem; /* 125px */
+  font-size: 1.555rem; /* 29px */
+  margin-bottom: 3rem;
+}
+/* 768,990,1400 */
+/* Celular */
+@media (max-width: 576px) {
+  body {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  header {
+    flex-direction: column; /* Alinha o conteúdo verticalmente */
+    height: auto;
+    padding: 0.5rem 0;
+  }
+
+  header img {
+    max-height: 40px; /* Reduz tamanho da imagem */
+  }
+
+  header ul {
+    flex-direction: column; /* Empilha itens do menu */
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  header li {
+    margin: 0.5rem 0; /* Espaço entre os itens */
+    font-size: 1.2rem; /* Reduz tamanho da fonte */
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+    width: 100%; /* Ajusta à largura da tela */
+    padding: 0.75rem; /* Reduz preenchimento */
+    height: auto; /* Ajusta a altura automaticamente */
+    margin-bottom: 20px;
+  }
+
+  .eventos {
+    padding: 1.5rem; /* Reduz preenchimento */
+  }
+
+  .eventos h1 {
+    font-size: 1.25rem; /* Ajusta tamanho do título */
+    padding: 1rem;
+  }
+
+  .eventos .eventos-telas {
+    flex-direction: column; /* Empilha elementos verticalmente */
+    gap: 1.5rem;
+  }
+
+  .eventos .eventos-tela {
+    padding: 1rem; /* Reduz preenchimento */
+    border-radius: 10px;
+  }
+
+  .light {
+    font-size: 1.75rem;
+    width: 100%; /* Ocupa toda a largura */
+    padding: 1rem;
+  }
+
+  .wrapper {
+    padding: 1rem;
+  }
+
+  footer {
+    height: 50px;
+  }
+
+  /* Otimiza as classes .box1 até .box11 */
+  [class^="box"] {
+    flex-direction: column; /* Alinha conteúdo verticalmente */
+    height: auto;
+    padding: 1.5rem;
+    margin: 1.5rem 0; /* Ajusta margens superior e inferior */
+    font-size: 1.25rem;
+  }
+  img {
+    max-width: 100%; /* Imagens não ultrapassam a largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 200px; /* Define uma altura máxima */
+    border-radius: 10px; /* Mantém consistência */
+  }
+  
+  [class^="box"] img {
+    max-height: 200px; /* Ajusta especificamente as imagens dentro das boxes */
+  }
+}
+
+/* Media Query para telas de até 768px */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem; /* Tamanho da fonte reduzido */
+    padding: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    height: auto; /* Ajuste dinâmico conforme conteúdo */
+    padding: 1rem 0; /* Padding vertical */
+  }
+
+  header li {
+    font-size: 1rem; /* Reduz o tamanho da fonte do menu */
+    margin: 0.5rem 0; /* Espaçamento vertical */
+  }
+
+  .titulo, .light, .info {
+    font-size: 1.1rem; /* Ajuste do tamanho para se encaixar nas boxes */
+    padding: 1rem; /* Espaçamento interno */
+    width: 100%; /* Faz com que as caixas se ajustem ao tamanho da tela */
+    margin: 0 auto; /* Centraliza o título */
+  }
+
+  /* Ajuste geral das boxes */
+  [class^="box"] {
+    font-size: 1rem; /* Fonte ajustada para caber dentro da box */
+    padding: 1.5rem; /* Padding menor */
+    margin: 1rem auto; /* Margem para centralizar */
+    width: 90%; /* Box ocupa 90% da largura */
+    height: auto; /* Ajuste a altura dinamicamente */
+  }
+
+  /* Ajustes específicos para as imagens dentro das boxes */
+  [class^="box"] img {
+    width: 100%; /* Aumenta a largura da imagem para preencher a box */
+    max-height: 300px; /* Aumenta a altura máxima da imagem */
+    object-fit: cover; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Bordas arredondadas */
+  }
+
+  /* Ajustes adicionais para imagens gerais */
+  img {
+    width: 100%; /* A imagem ocupa toda a largura disponível */
+    max-height: 350px; /* Aumenta ainda mais a altura da imagem */
+    object-fit: cover; /* Garante que a imagem não fique distorcida */
+    display: block;
+    margin: 0 auto;
+  }
+
+  .box img {
+    max-height: 300px; /* Aumenta a altura para 300px nas boxes específicas */
+  }
+}
+
+
+
+/* Media Query para telas de até 990px */
+@media (max-width: 990px) {
+  body {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  header {
+    height: 10%;
+  }
+
+  header li {
+    font-size: 1.3rem;
+    margin-right: 20px;
+  }
+
+  .titulo {
+    font-size: 2rem;
+    width: 85%;
+  }
+
+  [class^="box"] {
+    padding: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  img {
+    max-width: 80%; /* Reduz o tamanho da imagem */
+    max-height: 300px;
+    border-radius: 12px;
+  }
+
+  [class^="box"] img {
+    max-height: 20px;
+  }
+}
+
+/* Media Query para telas de até 1400px */
+@media (max-width: 1400px) { 
+  body {
+    font-size: 1.2rem; /* Fonte geral equilibrada */
+  }
+
+  header {
+    height: 10%; /* Altura proporcional */
+    padding: 0.5rem 2rem; /* Padding lateral */
+  }
+
+  header li {
+    font-size: 1.3rem; /* Ajusta tamanho da fonte */
+    margin-right: 1.5rem; /* Espaçamento mais equilibrado */
+  }
+
+  .titulo, .light, .info {
+    font-size: 2rem; /* Títulos maiores */
+    padding: 1.5rem; /* Espaçamento interno mais confortável */
+    margin: 2rem auto; /* Centraliza com margens */
+    width: 80%; /* Ajusta largura para ocupar mais espaço */
+  }
+
+  [class^="box"] {
+    padding: 2rem; /* Padding confortável */
+    font-size: 1rem; /* Texto dentro das boxes */
+    margin: 2rem auto; /* Margens uniformes */
+    width: 90%; /* Ocupa mais largura da tela */
+  }
+
+  [class^="box"] img {
+    width: 100%; /* Imagem ocupa toda a largura do container */
+    max-height: 400px; /* Altura máxima mais confortável */
+    object-fit: contain; /* Mantém proporção sem cortar */
+    border-radius: 15px; /* Bordas arredondadas */
+  }
+
+  footer {
+    height: 10%; /* Ajusta altura do rodapé */
+    padding: 1rem 0; /* Padding vertical */
+  }
+}
+
+
+
