@@ -126,6 +126,7 @@ header a {
 
 .titulo-input-card {
     width: 70%;
+    display: flex;
 }
 
 .inputs-cadastro p {
@@ -170,7 +171,7 @@ header a {
 
 .card-busca-usuarios {
     background-color: #3E4096;
-    width: 35%;
+    width: 45%;
     padding: 60px;
     color: white;
     border-radius: 50px;
@@ -226,25 +227,25 @@ header a {
     transition: all .3s
 }
 
-
-
 .usuarios-filtrados {
     display: flex;
     justify-content: space-between;
     gap: 25px;
 }
 
+
 .usuarios-filtrados p {
     font-size: 25px;
     margin-bottom: 10px;
 }
 
-.card-filtrado{
+.card-filtrado {
     background-color: #313379;
-    width: 100%;
+    width: 50%;  /* Ajuste conforme necessário */
     padding: 30px;
     border-radius: 50px;
 }
+
 
 .buttons-card-filtrado {
     display: flex;
@@ -255,6 +256,7 @@ header a {
 
 .botao-verde, .botao-vermelho {
     width: 100%;
+    padding: 10px;
 }
 
 .botao-verde button {
