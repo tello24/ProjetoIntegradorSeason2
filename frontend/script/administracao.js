@@ -9,6 +9,7 @@ async function prepararPagina() {
     } else {
         loginButton.style.display = 'none';
         loginLink.innerHTML = 'Login';
+        window.location.href = "./../pages/paginaLogin.html"
     }
 }
 
@@ -86,4 +87,24 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#paginaAdministracao').style.display = 'none';
         sairButton.style.display = 'none';
     });
+});
+
+const logout = () => {
+    localStorage.removeItem('token');
+    alert('Logout realizado com sucesso!');
+    const loginLink = document.querySelector('#loginLink');
+    loginLink.innerHTML = 'Login';
+    const loginButton = document.querySelector('#paginaAdministracao');
+    loginButton.style.display = 'none'; 
+    window.location.href = ("./../pages/paginaLogin.html")
+};
+
+document.querySelector('#loginLink').addEventListener('click', function (e) {
+    e.preventDefault();
+    if (localStorage.getItem('token')) {
+        logout();
+        window.location.href("./../pages/paginaLogin.html")
+    } else {
+        window.location.href = './../pages/paginaLogin.html'; // Redireciona para a página de login
+    }
 });

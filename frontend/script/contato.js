@@ -62,13 +62,15 @@ const logout = () => {
     loginLink.innerHTML = 'Login';
     const loginButton = document.querySelector('#paginaAdministracao');
     loginButton.style.display = 'none'; 
+    window.location.href = ("./../pages/paginaLogin.html")
 };
 
 document.querySelector('#loginLink').addEventListener('click', function (e) {
     e.preventDefault();
     if (localStorage.getItem('token')) {
         logout();
+        window.location.href("./../pages/paginaLogin.html")
     } else {
-        window.location.href = '/login'; // Redireciona para a página de login
+        window.location.href = './../pages/paginaLogin.html'; // Redireciona para a página de login
     }
 });
