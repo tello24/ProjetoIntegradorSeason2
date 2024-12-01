@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -15,14 +16,44 @@
 
 <body prepararPagina()>
 
+    <svg width="0" height="0">
+        <defs>
+            <filter id="protanopia">
+                <feColorMatrix type="matrix" values="0.567,0.433,0,0,0, 0.558,0.442,0,0,0, 0,0.242,0.758,0,0, 0,0,0,1,0"/>
+            </filter>
+            <filter id="deuteranopia">
+                <feColorMatrix type="matrix" values="0.625,0.375,0,0,0, 0.7,0.3,0,0,0, 0,0.3,0.7,0,0, 0,0,0,1,0"/>
+            </filter>
+            <filter id="tritanopia">
+                <feColorMatrix type="matrix" values="0.95,0.05,0,0,0, 0,0.433,0.567,0,0, 0,0.475,0.525,0,0, 0,0,0,1,0"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <select id="daltonismo-select" style="position: fixed; top: 35px; right: 10px; z-index: 1000;">
+        <option value="">Modo Padrão</option>
+        <option value="protanopia">Protanopia</option>
+        <option value="deuteranopia">Deuteranopia</option>
+        <option value="tritanopia">Tritanopia</option>
+    </select>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
     <header>
         <img id="header-logo" src="./../IMAGENS/LOGO.png">
         <ul class="lista">
             <li><a href="./paginaInicial.html">Início</a></li>
-            <li><a href="">Oficina</a></li>
-            <li><a href="">Saúde e Bem-Estar</a></li>
-            <li><a href="./paginaContato.html">Contato</a></li>
+            <li><a href="./paginaOficina.html">Oficina</a></li>
+            <li><a href="./paginaSaude.html">Saúde</a></li>
             <li><a href="./paginaEventos.html">Eventos</a></li>
+<<<<<<< HEAD
+=======
+            <li><a href="./paginaContato.html">Contato</a></li>
+>>>>>>> 3b9d3495f60131689cbfa8646a565a91d472e510
             <li id="paginaAdministracao" style="display: none;"><a href="./paginaAdministração.html">Administração</a></li>
             <li><a href="./paginaLogin.html" id="loginLink">Login</a></li>
         </ul>
@@ -49,7 +80,7 @@
             </p>
         </div>
         <div class="right">
-            <img src="../IMAGENS/IMG_1823.jpeg" alt="recreacao" class="image">
+            <img src="../IMAGENS/recreacao.jpeg" alt="recreacao" class="image">
         </div>
     </section>
     <section class="box2">
@@ -62,7 +93,7 @@
             </p>
         </div>
         <div class="right">
-            <img src="../IMAGENS/IMG_1811.jpeg" alt="recreacao" class="image">
+            <img src="../IMAGENS/aniversario_tematico.jpeg" alt="recreacao" class="image">
         </div>
     </section>
     <section class="box3">
@@ -75,11 +106,11 @@
             </p>
         </div>
         <div class="right">
-            <img src="../IMAGENS/IMG_1743.jpeg" alt="recreacao" class="image">
+            <img src="../IMAGENS/ferias_condominios_clubes.jpeg" alt="recreacao" class="image">
         </div>
     </section>
         <div class="wrapper">
-            <div class="titulo">Corpotativo</div>
+            <div class="titulo">Corporativo</div>
         </div>
     <section class="box4">
         <div class="left">
@@ -91,7 +122,7 @@
             </p>
             </div>
         <div class="right">
-            <img src="../IMAGENS/IMG_1823.jpeg" alt="recreacao" class="image">
+            <img src="../IMAGENS/community_day.jpg" alt="recreacao" class="image">
         </div>
     </section>
     <section class="box5">
@@ -104,7 +135,7 @@
             </p>
             </div>
         <div class="right">
-            <img src="../IMAGENS/IMG_1823.jpeg" alt="recreacao" class="image">
+            <img src="../IMAGENS/kids_day.png" alt="recreacao" class="image">
         </div>
     </section>
     <section class="box6">
@@ -117,7 +148,7 @@
             </p>
             </div>
         <div class="right">
-            <img src="../IMAGENS/IMG_1823.jpeg" alt="recreacao" class="image">
+            <img src="../IMAGENS/Game_2030.jpg" alt="recreacao" class="image">
         </div>
     </section>
     <section class="box7">
@@ -143,7 +174,7 @@
             </p>
             </div>
         <div class="right">
-            <img src="../IMAGENS/IMG_1823.jpeg" alt="recreacao" class="image">
+            <img src="../IMAGENS/robotica.jpg" alt="recreacao" class="image">
         </div>
     </section>
     <section class="box9">
@@ -156,7 +187,7 @@
             </p>
             </div>
         <div class="right">
-            <img src="../IMAGENS/IMG_1823.jpeg" alt="recreacao" class="image">
+            <img src="../IMAGENS/Scape_room.jpeg" alt="recreacao" class="image">
         </div>
     </section>
     <section class="box10">
@@ -169,7 +200,7 @@
             </p>
             </div>
         <div class="right">
-            <img src="../IMAGENS/IMG_1823.jpeg" alt="recreacao" class="image">
+            <img src="../IMAGENS/teatro .png" alt="recreacao" class="image">
         </div>
     </section>
     <section class="box11">
@@ -182,7 +213,7 @@
             </p>
             </div>
         <div class="right">
-            <img src="../IMAGENS/IMG_1823.jpeg" alt="recreacao" class="image">
+            <img src="../IMAGENS/Sipat.png" alt="recreacao" class="image">
         </div>
     </section>
 
@@ -198,6 +229,10 @@
 
     <script src="./../script/evento.js"></script>
     <script src="https://kit.fontawesome.com/20e4dde64c.js" crossorigin="anonymous"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
 </body>
 

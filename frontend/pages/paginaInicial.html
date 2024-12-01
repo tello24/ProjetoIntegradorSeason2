@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -11,18 +12,35 @@
     <link rel="stylesheet" href="./../style/styles.css">
     <link rel="icon" type="image/png" href="/frontend/IMAGENS/LOGO.png">
     <title>Passatempo Educativo</title>
+
+    <!-- SVG para filtros de daltonismo -->
+    <svg width="0" height="0">
+        <defs>
+            <filter id="protanopia">
+                <feColorMatrix type="matrix"
+                    values="0.567,0.433,0,0,0, 0.558,0.442,0,0,0, 0,0.242,0.758,0,0, 0,0,0,1,0"/>
+            </filter>
+            <filter id="deuteranopia">
+                <feColorMatrix type="matrix"
+                    values="0.625,0.375,0,0,0, 0.7,0.3,0,0,0, 0,0.3,0.7,0,0, 0,0,0,1,0"/>
+            </filter>
+            <filter id="tritanopia">
+                <feColorMatrix type="matrix"
+                    values="0.95,0.05,0,0,0, 0,0.433,0.567,0,0, 0,0.475,0.525,0,0, 0,0,0,1,0"/>
+            </filter>
+        </defs>
+    </svg>
 </head>
 
 <body onload="prepararPagina()">
-
     <header>
         <img id="header-logo" src="./../IMAGENS/LOGO.png">
         <ul class="lista">
             <li><a href="./paginaInicial.html">Início</a></li>
-            <li><a href="">Oficina</a></li>
-            <li><a href="">Saúde e Bem-Estar</a></li>
-            <li><a href="./paginaContato.html">Contato</a></li>
+            <li><a href="./paginaOficina.html">Oficina</a></li>
+            <li><a href="./paginaSaude.html">Saúde</a></li>
             <li><a href="./paginaEventos.html">Eventos</a></li>
+            <li><a href="./paginaContato.html">Contato</a></li>
             <li id="paginaAdministracao" style="display: none;"><a href="./paginaAdministração.html">Administração</a></li>
             <li><a href="./paginaLogin.html" id="loginLink">Login</a></li>
         </ul>
@@ -34,16 +52,7 @@
                 <p>Passatempo Educativo</p>
             </div>
             <div class="conteudo">
-                <p>A Passatempo Eventos é composta por profissionais qualificados e
-                    dedicados. Essa diversidade de conhecimentos e habilidades nos
-                    permite oferecer um atendimento personalizado e eficiente. Além
-                    disso, a constante troca de experiências e a colaboração entre os
-                    membros da equipe enriquecem nosso ambiente de trabalho, garantindo
-                    um ambiente acolhedor e propício ao aprendizado. Muitos profissionais
-                    fizeram parte de um curso Recreatur que oferecemos em São Paulo,
-                    incentivando a liderança nos jovens e expandindo suas perspectivas
-                    de trabalho.
-                </p>
+                <p>A Passatempo Eventos é composta por profissionais qualificados e dedicados. Essa diversidade de conhecimentos e habilidades nos permite oferecer um atendimento personalizado e eficiente. Além disso, a constante troca de experiências e a colaboração entre os membros da equipe enriquecem nosso ambiente de trabalho, garantindo um ambiente acolhedor e propício ao aprendizado. Muitos profissionais fizeram parte de um curso Recreatur que oferecemos em São Paulo, incentivando a liderança nos jovens e expandindo suas perspectivas de trabalho.</p>
             </div>
         </div>
         <div class="slider">
@@ -65,7 +74,7 @@
                     <img src="./../IMAGENS/IMG_1743.jpeg" class="img2">
                 </div>
                 <div class="slide">
-                    <img src="./../IMAGENS/IMG_1823.jpeg" class="img3">
+                    <img src="./../IMAGENS/teatro2.jpeg" class="img3">
                 </div>
 
                 <!--Auto navegação-->
@@ -87,16 +96,21 @@
         <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
         <script>
             new window.VLibras.Widget('https://vlibras.gov.br/app');
-        </script>
+        </script>
+
+        <select id="daltonismo-select" style="position: fixed; top: 35px; right: 10px; z-index: 1000;">
+            <option value="">Modo Padrão</option>
+            <option value="protanopia">Protanopia</option>
+            <option value="deuteranopia">Deuteranopia</option>
+            <option value="tritanopia">Tritanopia</option>
+        </select>
 
     </div>
 
     <footer>
         <div class="icons">
-            <a href="https://web.facebook.com/Passatempoedu/?locale=pt_BR&_rdc=1&_rdr"><i
-                    class="face fa-brands fa-square-facebook fa-2x"></i>
-                <a href="https://www.instagram.com/passatempoeducativo/"><i
-                        class="insta fa-brands fa-instagram fa-2x"></i></a>
+            <a href="https://web.facebook.com/Passatempoedu/?locale=pt_BR&_rdc=1&_rdr"><i class="face fa-brands fa-square-facebook fa-2x"></i></a>
+            <a href="https://www.instagram.com/passatempoeducativo/"><i class="insta fa-brands fa-instagram fa-2x"></i></a>
         </div>
     </footer>
 

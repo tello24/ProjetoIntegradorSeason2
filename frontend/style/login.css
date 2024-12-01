@@ -243,5 +243,11 @@ footer {
     }
 
 }
+[vw] {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 10000; 
+}
 
 /* 4071, 1883, 1854 */

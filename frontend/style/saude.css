@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Luckiest Guy", serif;
+  background-image: url(./../IMAGENS/Background.png);
+  background-size: contain;
+  font-size: 1rem;
+}
+
+header {
+  background-color: #3E4096;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+}
+
+header img {
+  max-height: 70%;
+  padding: 0.625rem; /* 10px */
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+}
+
+header li {
+  margin-right: 1.5625rem; /* 25px */
+  font-size: 1.4rem;
+  transition: all ease 0.3s;
+}
+
+header li:hover {
+  border-bottom: 0.125rem solid #fff; /* 2px */
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+:root {
+    --orange-color: #da722c;
+  }
+
+  .titulo {
+    background-color: #F4DD2B;
+    color: rgb(0, 0, 0);
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 3.75rem; /* 60px */
+    border-radius: 0.625rem; /* 10px */
+    padding: 1.25rem; /* 20px */
+    width: 71.25rem; /* 1140px */
+    height: 1.875rem; /* 30px */
+    margin-top: 3.88rem;
+    }
+
+    .saude {
+        padding: 5.625rem; /* 90px */
+    }
+
+    .saude h1 {
+        text-align: center;
+        padding: 2.5rem; /* 40px */
+    }
+
+    .saude .saude-telas {
+        display: flex;
+        gap: 4.5625rem;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .saude .saude-tela {
+        background: #8DA5ED;
+        border-radius: 0.75rem; /* 12px */
+        padding: 1.25rem 2rem; /* 20px 32px */
+    }
+
+    .info {
+        font-size: xx-large;
+        display: flex;
+        justify-content: center;
+        padding: 0.75rem; /* 12px */
+      }
+
+      .light{
+        color: rgb(255, 255, 255);
+        font-size: 3rem;
+        text-align: center;
+        background-color: #ED3237;
+        margin-bottom: 3.75rem; /* 60px */
+        border-radius: 0.625rem; /* 10px */
+        padding: 1.25rem; /* 20px */
+        margin-top: 4rem;
+        width: 100rem;
+      }
+
+      .wrapper {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      footer {
+        background: #ED3237;
+        width: 100%;
+        height: 7%;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box1 {
+        display: flex;
+        height: 9.375rem; /* 150px */
+        max-width: 90%;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 1.25rem; /* 20px */
+        background: #8DA5ED;
+        margin: 3.125rem auto 0 auto; /* 50px */
+        padding: 2.5rem; /* 40px */
+        padding-top: 7.8125rem; /* 125px */
+        padding-bottom: 7.8125rem; /* 125px */
+        font-size: 1.555rem; /* 29px */
+        margin-top: -3rem;
+      }
+      img {
+        height: 21.875rem; /* 350px */
+        border-radius: 0.625rem; /* 10px */
+      }
+      .box2{
+        display: flex;
+        height: 9.375rem; /* 150px */
+        max-width: 90%;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 1.25rem; /* 20px */
+        background: #8DA5ED;
+        margin: 3.125rem auto 0 auto; /* 50px */
+        padding: 2.5rem; /* 40px */
+        padding-top: 7.8125rem; /* 125px */
+        padding-bottom: 7.8125rem; /* 125px */
+        font-size: 1.555rem; /* 29px */
+      }
+
+      @media (max-width: 576px) {
+        body {
+          font-size: 14px;
+          padding: 5px;
+        }
+      
+        header {
+          flex-direction: column; /* Alinha o conteúdo verticalmente */
+          height: auto;
+          padding: 0.5rem 0;
+        }
+      
+        header img {
+          max-height: 40px; /* Reduz tamanho da imagem */
+        }
+      
+        header ul {
+          flex-direction: column; /* Empilha itens do menu */
+          text-align: center;
+          padding: 0.5rem 0;
+        }
+      
+        header li {
+          margin: 0.5rem 0; /* Espaço entre os itens */
+          font-size: 1.2rem; /* Reduz tamanho da fonte */
+        }
+      
+        .titulo {
+          font-size: 1.5rem;
+          width: 100%; /* Ajusta à largura da tela */
+          padding: 0.75rem; /* Reduz preenchimento */
+          height: auto; /* Ajusta a altura automaticamente */
+          margin-bottom: 20px;
+        }
+
+          .saude {
+              padding: 1.5rem;
+          }
+
+          .saude h1 {
+            font-size: 1.25rem;
+            padding: 1rem;
+          }
+
+          .saude .saude-telas {
+            flex-direction: column;
+            gap: 1.5rem;
+          }
+
+          .saude .saude-tela {
+            padding: 1rem; /* Reduz preenchimento */
+            border-radius: 10px;
+          }
+
+          .light {
+            font-size: 1.75rem;
+            width: 100%; /* Ocupa toda a largura */
+            padding: 1rem;
+          }
+
+          .wrapper {
+            padding: 1rem;
+          }
+        
+          footer {
+            height: 50px;
+          }
+        
+        }
+        .daltonismo-container {
+          margin: 20px 0;
+          text-align: center;
+      }
+      
+      body.protanopia {
+          filter: url(#protanopia);
+      }
+      
+      body.deuteranopia {
+          filter: url(#deuteranopia);
+      }
+      
+      body,p,h1,h2,h3,h4,h5,h6,a,span {
+          font-size: 16px;
+      }
+      
+      body.tritanopia {
+          filter: url(#tritanopia);
+      }
+      
+      .accessibility-options input {
+          display: none;
+      }
+      
+      .accessibility-options label {
+          padding: 10px;
+          background-color: #1286e6;
+          margin-right: 10px;
+          cursor: pointer;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+      }
+      
+      input:checked+label {
+          background-color: #003b64;
+          color: white;
+      }
+      
+      .filter-button {
+          margin: 5px;
+          padding: 10px 20px;
+          background-color: #003b64;
+          color:#1286e6;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+      }
+      
+      .filter-button:hover {
+          background-color: #ffcc00;
+      }
+      
+      svg {
+          display: none;
+      }
+      
+      #daltonismo-select {
+          position: fixed;
+          top: 10px;
+          right: 10px;
+          z-index: 1000;
+          background-color: #1286e6; 
+          color: white; 
+          border: none;
+          padding: 1px 1px; 
+          border-radius: 1px; 
+          font-size: 14px; 
+          cursor: pointer;
+      }
+      
+      #daltonismo-select:hover {
+          background-color: #0e6bb4; 
+      }
+      [vw] {
+        position: fixed; 
+        bottom: 20px; 
+        right: 20px; 
+        z-index: 10000; 
+      }

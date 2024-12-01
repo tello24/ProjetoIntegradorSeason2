@@ -14,9 +14,30 @@ async function prepararPagina() {
 
 document.addEventListener('DOMContentLoaded', () => {
     prepararPagina(); // Certifica-se de que a página foi carregada antes de chamar a função
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+    const daltonismoSelect = document.getElementById('daltonismo-select');
+
+    // Recupera a configuração de daltonismo salva
+    const savedDaltonismo = localStorage.getItem('daltonismoClass');
+    if (savedDaltonismo) {
+        document.body.classList.add(savedDaltonismo);
+        daltonismoSelect.value = savedDaltonismo;
+    }
+
+    daltonismoSelect.addEventListener('change', function() {
+        document.body.classList.remove('protanopia', 'deuteranopia', 'tritanopia');
+
+        const selectedValue = daltonismoSelect.value;
+        if (selectedValue) {
+            document.body.classList.add(selectedValue);
+            // Salva a configuração de daltonismo no localStorage
+            localStorage.setItem('daltonismoClass', selectedValue);
+        } else {
+            // Remove a configuração se nenhuma opção estiver selecionada
+            localStorage.removeItem('daltonismoClass');
+        }
+    });
+
     const cadastrarButton = document.querySelector('.card-cadastro button');
     const sairButton = document.querySelector('#sairButton');
 
@@ -65,7 +86,4 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#paginaAdministracao').style.display = 'none';
         sairButton.style.display = 'none';
     });
-
-    // Preparar a página ao carregar
-    prepararPagina();
 });

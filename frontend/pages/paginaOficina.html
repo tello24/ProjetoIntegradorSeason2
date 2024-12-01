@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./../style/oficina.css">
+    <link rel="icon" type="image/png" href="/frontend/IMAGENS/LOGO.png">
+    <title>Passatempo Eventos</title>
+</head>
+
+<body>
+
+    <svg width="0" height="0">
+        <defs>
+            <filter id="protanopia">
+                <feColorMatrix type="matrix" values="0.567,0.433,0,0,0, 0.558,0.442,0,0,0, 0,0.242,0.758,0,0, 0,0,0,1,0"/>
+            </filter>
+            <filter id="deuteranopia">
+                <feColorMatrix type="matrix" values="0.625,0.375,0,0,0, 0.7,0.3,0,0,0, 0,0.3,0.7,0,0, 0,0,0,1,0"/>
+            </filter>
+            <filter id="tritanopia">
+                <feColorMatrix type="matrix" values="0.95,0.05,0,0,0, 0,0.433,0.567,0,0, 0,0.475,0.525,0,0, 0,0,0,1,0"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <select id="daltonismo-select" style="position: fixed; top: 35px; right: 10px; z-index: 1000;">
+        <option value="">Modo Padrão</option>
+        <option value="protanopia">Protanopia</option>
+        <option value="deuteranopia">Deuteranopia</option>
+        <option value="tritanopia">Tritanopia</option>
+    </select>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <header>
+        <img id="header-logo" src="./../IMAGENS/LOGO.png">
+        <ul class="lista">
+            <li><a href="./paginaInicial.html">Início</a></li>
+            <li><a href="./paginaOficina.html">Oficina</a></li>
+            <li><a href="./paginaSaude.html">Saúde</a></li>
+            <li><a href="./paginaEventos.html">Eventos</a></li>
+            <li><a href="./paginaContato.html">Contato</a></li>
+            <li id="paginaAdministracao" style="display: none;"><a href="./paginaAdministração.html">Administração</a></li>
+            <li><a href="./paginaLogin.html" id="loginLink">Login</a></li>
+        </ul>
+    </header>
+
+    <section class="eventos">
+        <div class="wrapper">
+            <p class="light">Com uma variedade de materiais coloridos e ferramentas divertidas, nossas oficinas proporcionam um ambiente estimulante e acolhedor para que as crianças possam se expressar livremente. Valorizamos a diversidade de ideias e incentivamos a experimentação, sempre celebrando a singularidade de cada pequeno artista. Aqui, o aprendizado acontece de forma lúdica e significativa, promovendo o desenvolvimento criativo e emocional de forma encantadora.</p>
+
+            <div class="titulo">Nossas Oficinas</div>
+            
+            
+            <!-- Script JavaScript externo -->
+            <script src="oficina.js"></script>
+
+        </div>
+    </section>
+    <section class="box1">
+        <div class="left">
+            <h1>
+                Batalha Nerf
+            </h1>
+            <p>
+                Promover a diversão, o exercício físico, o trabalho em equipe, e o desenvolvimento de habilidades estratégicas e motoras, utilizando as pistolas Nerf em jogos organizados e seguros. Cenário de campo de batalha, equipamentos e regras de segurança.
+            </p>
+        </div>
+        <div class="right">
+            <img src="../IMAGENS/nerf.jpeg" alt="recreacao" class="image">
+        </div>
+    </section>
+    <section class="box2">
+        <div class="left">
+            <h1>
+                Bolhas Gigantes
+            </h1>
+            <p>
+                Criar bolhas gigantes é uma atividade que encanta pessoas de todas as idades. A mistura perfeita de água, detergente e um toque de mágica transforma simples bolhas de sabão em verdadeiras obras de arte flutuantes. Imagine o brilho nos olhos das crianças ao verem bolhas enormes pairando no ar, refletindo as cores do arco-íris. É um momento de diversão e admiração que ficará gravado na memória de todos os participantes. Deixe a imaginação fluir e embarque nessa jornada de encanto e magia com a nossa oficina de bolhas gigantes.
+            </p>
+        </div>
+        <div class="right">
+            <img src="../IMAGENS/bolhas_gigantes.jpeg" alt="recreacao" class="image">
+        </div>
+    </section>
+    <section class="box3">
+        <div class="left">
+            <h1>
+                Catavento
+            </h1>
+            <p>
+                Durante a oficina, as crianças terão a oportunidade de aprender sobre o funcionamento dos cataventos, explorando conceitos de aerodinâmica e energia eólica de forma lúdica e interativa. Com materiais simples e muita criatividade, os participantes poderão construir seu próprio cata-vento e experimentar a sensação de ver a força do vento transformada em movimento.
+            </p>
+        </div>
+        <div class="right">
+            <img src="../IMAGENS/culinaria.jp" alt="recreacao" class="image">
+        </div>
+    </section>
+    <section class="box4">
+        <div class="left">
+            <h1>
+                Culinária
+           </h1>
+            <p>
+                Elas poderão experimentar pratos deliciosos e se aventurar na cozinha de forma segura e divertida. Com ingredientes coloridos e instruções simples, cada receita foi cuidadosamente planejada para estimular a criatividade e despertar o interesse dos pequenos pela culinária. Cozinhar pode ser uma atividade educativa e prazerosa para as crianças, proporcionando momentos especiais em família e criando memórias afetuosas que serão lembradas com carinho no futuro.
+            </p>
+            </div>
+        <div class="right">
+            <img src="../IMAGENS/culinaria.jpg" alt="recreacao" class="image">
+        </div>
+    </section>
+    <section class="box5">
+        <div class="left">
+            <h1>
+                Pintura em Tela
+           </h1>
+            <p>
+                Nossa oficina de pintura é um espaço acolhedor e inspirador, onde a criatividade é sempre bem-vinda. Aqui, os artistas podem explorar diferentes técnicas e estilos para dar vida às suas ideias e emoções. Os cavaletes proporcionam a base perfeita para a tela, permitindo que cada pincelada conte uma história única. Cada item na nossa oficina é um convite para a expressão artística e a celebração da beleza que está presente em cada traço e cor. Junte-se a nós e deixe sua imaginação voar, transformando simples tintas em verdadeiras obras de arte.
+            </p>
+            </div>
+        <div class="right">
+            <img src="../IMAGENS/pintura_em_tela.jpg" alt="recreacao" class="image">
+        </div>
+    </section>
+    <section class="box6">
+        <div class="left">
+            <h1>
+                Pulseira Macramê
+           </h1>
+            <p>
+                Com diferentes cores de lã e um molde, podemos dar vida a uma pulseira única e cheia de significado. As crianças vão se encantar com a ideia de poder presentear um amigo com algo feito por elas mesmas, repleto de carinho e dedicação. Além de estimular a criatividade, essa atividade promove a amizade e fortalece os laços entre os pequenos. Juntos, eles vão se divertir criando algo especial que certamente será valorizado e apreciado pelo amigo presenteado.
+            </p>
+            </div>
+        <div class="right">
+            <img src="../IMAGENS/pulseira_macrame.jpg" alt="recreacao" class="image">
+        </div>
+    </section>
+    <section class="box7">
+        <div class="left">
+            <h1>
+                Robótica
+           </h1>
+            <p>
+                Os participantes são encorajados a criar um carrinho controlado por Bluetooth, com a orientação da nossa equipe, para colaborar na construção de forma criativa. Essa atividade não apenas proporciona aprendizado prático em engenharia e tecnologia, mas também fomenta um ambiente de competição saudável e o orgulho de ver o fruto do esforço em equipe.
+            </p>
+            </div>
+        <div class="right">
+            <img src="../IMAGENS/robotica2.jpg" alt="recreacao" class="image">
+        </div>
+    </section>
+    <section class="box8">
+        <div class="left">
+            <h1>
+                Slime
+           </h1>
+            <p>
+                A criatividade e diversão se encontram. Com uma oficina de slime, os participantes têm a oportunidade de soltar a imaginação, misturar cores, texturas e criar algo único e especial. É uma atividade que estimula a coordenação motora, a concentração e a interação em grupo, proporcionando momentos de alegria e aprendizado.
+            </p>
+            </div>
+        <div class="right">
+            <img src="../IMAGENS/teatro2.jpe" alt="recreacao" class="image">
+        </div>
+    </section>
+    <section class="box9">
+        <div class="left">
+            <h1>
+                Terrário
+           </h1>
+            <p>
+                Você e seus pequenos poderão se divertir juntos enquanto aprendem a cuidar de plantas e criam um ambiente único e especial. Nossa oficina de terrários é uma oportunidade perfeita para estimular a criatividade, promover a conexão com a natureza e fortalecer os laços familiares. Venha se encantar com essa experiência enriquecedora e cheia de cores!
+            </p>
+            </div>
+        <div class="right">
+            <img src="../IMAGENS/terrario.jpeg" alt="recreacao" class="image">
+        </div>
+    </section>
+    <section class="box10">
+        <div class="left">
+            <h1>
+                Teatro
+           </h1>
+            <p>
+                Ferramenta criativa e interativa utilizada para melhorar a comunicação, o trabalho em equipe, e o desenvolvimento pessoal dos colaboradores. Por meio de apresentações teatrais, oficinas de improvisação, e encenações de situações do cotidiano empresarial, os colaboradores podem explorar temas como liderança, relacionamento interpessoal, gestão de conflitos, e empatia. 
+            </p>
+            </div>
+        <div class="right">
+            <img src="../IMAGENS/teatro2.jpeg" alt="recreacao" class="image">
+        </div>
+    </section>
+    <section class="box11">
+        <div class="left">
+            <h1>
+                SIPAT
+           </h1>
+            <p>
+                Focado na conscientização dos colaboradores sobre a importância da saúde e segurança no ambiente de trabalho, a SIPAT envolve uma série de atividades como palestras, workshops, dinâmicas, treinamentos práticos, e apresentações sobre prevenção de acidentes, ergonomia, saúde mental, primeiros socorros, e bem-estar geral. O objetivo é promover um ambiente de trabalho seguro e saudável, incentivando a cultura da prevenção e do cuidado entre todos os colaboradores.
+            </p>
+            </div>
+        <div class="right">
+            <img src="../IMAGENS/Sipat.png" alt="recreacao" class="image">
+        </div>
+    </section>
+
+    <!-- Fim da parte de eventos-->
+    <footer>
+        <div class="icons">
+            <a href="https://web.facebook.com/Passatempoedu/?locale=pt_BR&_rdc=1&_rdr"><i
+                    class="face fa-brands fa-square-facebook fa-2x"></i>
+                <a href="https://www.instagram.com/passatempoeducativo/"><i
+                        class="insta fa-brands fa-instagram fa-2x"></i></a>
+        </div>
+    </footer>
+
+    <script src="./../script/evento.js"></script>
+    <script src="https://kit.fontawesome.com/20e4dde64c.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
