@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(usuarioData),
+                body: JSON.stringify(usuarioData), 
             });
 
             if (response.ok) {
