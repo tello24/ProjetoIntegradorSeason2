@@ -409,8 +409,8 @@ svg {
     background-color: #0e6bb4; 
 }
 [vw] {
-  position: fixed; /* Fixar o VLibras na tela */
-  bottom: 20px; /* Distância da parte inferior da tela */
-  right: 20px; /* Distância da borda direita da tela */
-  z-index: 10000; /* Garantir que ele fique acima de outros elementos */
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px; 
+  z-index: 10000; 
 }
