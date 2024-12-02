@@ -9,6 +9,23 @@ body {
     background-size: contain;
 }
 
+html, body {
+    height: 100%; /* Garante 100% da altura */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 1rem;
+}
+
+#usuarios {
+    flex: 1; /* Faz o conteúdo expandir para ocupar o espaço disponível */
+    padding: 1rem; /* Opcional: Adicione espaçamento no conteúdo */
+}
+
 body::-webkit-scrollbar {
     width: 12px;
 }
@@ -57,35 +74,10 @@ header a {
     text-decoration: none;
 }
 
-#content {
-    height: 300vh;
-}
-
-#usuarios,
-#conteudo,
-#chamados {
-    height: 100vh;
-}
-
 #usuarios {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.titulo-usuarios {
-    background-color: #3E4096;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    margin-top: 120px;
-}
-
-.titulo-usuarios h2 {
-    font-size: 50px;
-    padding: 40px;
-    color: white;
 }
 
 .cards {
@@ -94,24 +86,22 @@ header a {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 30px;
+    margin-top: 100px;
 }
-
-
 
 .card-cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #3E4096;
-    padding: 50px;
+    padding: 30px;
     border-radius: 50px;
     color: white;
 }
 
 .titulo-cadastro p {
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -138,7 +128,7 @@ header a {
 .inputs-cadastro input {
     margin-bottom: 20px;
     height: 30px;
-    width: 60%;
+    width: 63%;
     background: #dfdfdf;
     border: none;
     border-radius: 20px;
@@ -229,9 +219,12 @@ header a {
 
 .usuarios-filtrados {
     display: flex;
-    justify-content: space-between;
-    gap: 25px;
+    flex-direction: column; /* Muda para disposição vertical */
+    gap: 25px; /* Espaçamento entre os itens */
+    width: 100%; /* Garante que os cartões ocupem a largura do contêiner */
+    align-items: center; /* Centraliza os cartões */
 }
+
 
 
 .usuarios-filtrados p {
@@ -240,11 +233,13 @@ header a {
 }
 
 .card-filtrado {
+    width: 80%; /* Ajuste conforme necessário */
+    max-width: 600px; /* Define um tamanho máximo */
+    padding: 20px;
     background-color: #313379;
-    width: 50%;  /* Ajuste conforme necessário */
-    padding: 30px;
     border-radius: 50px;
 }
+
 
 
 .buttons-card-filtrado {
@@ -295,18 +290,12 @@ header a {
     font-size: 25px;
 }
 
-
-
 footer {
-    background: #ED3237;
-    width: 100%;
-    height: 3rem;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #ED3237; /* Cor de fundo do footer */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%; /* Garante que o footer tenha 100% de largura */
 }
 
 .icons {
