@@ -73,6 +73,20 @@ app.post('/login', async (req, res) => {
     res.status(200).json({ token });
 });
 
+// Endpoint para buscar usuários
+app.get('/logins', async (req, res) => {
+    try {
+        // Exclui o campo senha dos resultados usando '-senha'
+        const usuarios = await User.find({}, 'nome email'); // 'nome email' inclui apenas os campos nome e email
+        res.status(200).json(usuarios);
+    } catch (error) {
+        console.error("Erro ao buscar usuários:", error);
+        res.status(500).json({ error: 'Erro ao buscar usuários.' });
+    }
+});
+
+
+
 // Iniciar o servidor e conectar ao MongoDB
 app.listen(8000, async () => {
     await conectarAoMongo();

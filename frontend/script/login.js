@@ -39,6 +39,7 @@ const verificaLogin = async () => {
             alert('Login realizado com sucesso!');
             const loginButton = document.querySelector('#paginaAdministracao');
             loginButton.style.display = 'block';
+            window.location.href = "./../pages/paginaAdministração.html"
             const loginLink = document.querySelector('#loginLink');
             loginLink.innerHTML = 'Sair';
         } catch (e) {
@@ -56,14 +57,16 @@ const logout = () => {
     loginLink.innerHTML = 'Login';
     const loginButton = document.querySelector('#paginaAdministracao');
     loginButton.style.display = 'none'; 
+    window.location.href = ("./../pages/paginaLogin.html")
 };
 
 document.querySelector('#loginLink').addEventListener('click', function (e) {
     e.preventDefault();
     if (localStorage.getItem('token')) {
         logout();
+        window.location.href("./../pages/paginaLogin.html")
     } else {
-        window.location.href = '/login'; // Redireciona para a página de login
+        window.location.href = './../pages/paginaLogin.html'; // Redireciona para a página de login
     }
 });
 
@@ -77,4 +80,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     prepararPagina(); // Inicializa a página
+
+    const daltonismoSelect = document.getElementById('daltonismo-select');
+
+    // Recupera a configuração de daltonismo salva
+    const savedDaltonismo = localStorage.getItem('daltonismoClass');
+    if (savedDaltonismo) {
+        document.body.classList.add(savedDaltonismo);
+        daltonismoSelect.value = savedDaltonismo;
+    }
+
+    daltonismoSelect.addEventListener('change', function() {
+        document.body.classList.remove('protanopia', 'deuteranopia', 'tritanopia');
+
+        const selectedValue = daltonismoSelect.value;
+        if (selectedValue) {
+            document.body.classList.add(selectedValue);
+            // Salva a configuração de daltonismo no localStorage
+            localStorage.setItem('daltonismoClass', selectedValue);
+        } else {
+            // Remove a configuração se nenhuma opção estiver selecionada
+            localStorage.removeItem('daltonismoClass');
+        }
+    });
 });
