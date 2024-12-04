@@ -76,8 +76,7 @@ app.post('/login', async (req, res) => {
 // Endpoint para buscar usuários
 app.get('/logins', async (req, res) => {
     try {
-        // Exclui o campo senha dos resultados usando '-senha'
-        const usuarios = await User.find({}, 'nome email'); // 'nome email' inclui apenas os campos nome e email
+        const usuarios = await User.find({}, 'nome email');
         res.status(200).json(usuarios);
     } catch (error) {
         console.error("Erro ao buscar usuários:", error);
@@ -85,6 +84,25 @@ app.get('/logins', async (req, res) => {
     }
 });
 
+// Endpoint para excluir usuários pelo e-mail
+app.delete('/usuario', async (req, res) => {
+    const { email } = req.body;  // Recebe o e-mail no corpo da requisição
+
+    if (!email) {
+        return res.status(400).json({ error: 'O e-mail é obrigatório.' });
+    }
+
+    try {
+        const usuarioDeletado = await User.findOneAndDelete({ email });
+        if (!usuarioDeletado) {
+            return res.status(404).json({ error: 'Usuário não encontrado.' });
+        }
+        res.status(200).json({ mensagem: 'Usuário excluído com sucesso.' });
+    } catch (error) {
+        console.error("Erro ao excluir usuário:", error);
+        res.status(500).json({ error: 'Erro ao deletar usuário.' });
+    }
+});
 
 
 // Iniciar o servidor e conectar ao MongoDB

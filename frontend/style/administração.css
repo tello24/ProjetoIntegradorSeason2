@@ -21,6 +21,12 @@ main {
     padding: 1rem;
 }
 
+#content, #usuarios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #usuarios {
     flex: 1; /* Faz o conteúdo expandir para ocupar o espaço disponível */
     padding: 1rem; /* Opcional: Adicione espaçamento no conteúdo */
@@ -218,14 +224,12 @@ header a {
 }
 
 .usuarios-filtrados {
-    display: flex;
-    flex-direction: column; /* Muda para disposição vertical */
+    display: grid;
+    grid-template-columns: auto auto;
     gap: 25px; /* Espaçamento entre os itens */
     width: 100%; /* Garante que os cartões ocupem a largura do contêiner */
     align-items: center; /* Centraliza os cartões */
 }
-
-
 
 .usuarios-filtrados p {
     font-size: 25px;
@@ -235,59 +239,9 @@ header a {
 .card-filtrado {
     width: 80%; /* Ajuste conforme necessário */
     max-width: 600px; /* Define um tamanho máximo */
-    padding: 20px;
+    padding: 30px;
     background-color: #313379;
     border-radius: 50px;
-}
-
-
-
-.buttons-card-filtrado {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.botao-verde, .botao-vermelho {
-    width: 100%;
-    padding: 10px;
-}
-
-.botao-verde button {
-    background: #3ac33f;
-}
-
-.botao-verde button:hover{
-    background-color: #22af27;
-    transition: all .3s
-}
-
-.botao-vermelho button {
-    background: #ED3237;
-    padding: 10px;
-}
-
-.botao-vermelho button:hover{
-    background-color: #d02b30;
-    transition: all .3s
-}
-
-.buttons-card-filtrado button {
-    border: none;
-    color: #fff;
-    border-radius: 20px;
-    height: 50px;
-    width: 100%;
-    font-family: "Luckiest Guy", sans-serif;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.buttons-card-filtrado button {
-    font-size: 25px;
 }
 
 footer {
