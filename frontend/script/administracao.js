@@ -66,6 +66,12 @@ async function excluirUsuario() {
         return;
     }
 
+     // Pergunta ao usuário se ele tem certeza
+     const confirmar = confirm(`Tem certeza que deseja excluir o usuário com e-mail: ${usuarioExcluir}?`);
+     if (!confirmar) {
+         return; // Cancela a exclusão se o usuário clicar em "Cancelar"
+     }
+
     try {
         const response = await fetch('http://localhost:8000/usuario', {
             method: 'DELETE',
