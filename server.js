@@ -28,6 +28,14 @@ const userSchema = new mongoose.Schema({
     senha: { type: String, required: true }
 });
 
+// Modelo para armazenar textos
+const TextoSchema = new mongoose.Schema({
+    texto: { type: String, required: true },
+    criadoEm: { type: Date, default: Date.now }
+});
+
+const Texto = mongoose.model('Texto', TextoSchema);
+
 const User = mongoose.model('User', userSchema);
 
 // Endpoint para cadastro
@@ -110,3 +118,47 @@ app.listen(8000, async () => {
     await conectarAoMongo();
     console.log("Servidor rodando na porta 8000");
 });
+
+// Endpoint para salvar ou editar texto existente
+app.put('/editar-texto', async (req, res) => {
+    const { texto } = req.body;
+  
+    if (!texto) {
+      return res.status(400).json({ error: 'Texto não pode estar vazio.' });
+    }
+  
+    try {
+      // Atualizando o primeiro texto encontrado no banco
+      const textoExistente = await Texto.findOne();
+      if (textoExistente) {
+        textoExistente.texto = texto;  // Atualiza o texto
+        await textoExistente.save();  // Salva a alteração
+        res.status(200).json({ mensagem: 'Texto atualizado com sucesso!' });
+      } else {
+        // Se não encontrar nenhum texto, cria um novo
+        const novoTexto = new Texto({ texto });
+        const textoSalvo = await novoTexto.save();
+        res.status(201).json({ mensagem: 'Texto salvo com sucesso!', texto: textoSalvo });
+      }
+    } catch (error) {
+      console.error('Erro ao salvar texto:', error);
+      res.status(500).json({ error: 'Erro ao salvar texto.' });
+    }
+  });
+  
+
+app.get('/buscar-texto', async (req, res) => {
+    try {
+        const texto = await Texto.findOne(); // Encontra o primeiro texto no banco de dados
+        
+        if (texto) {
+            return res.status(200).json({ texto: texto.texto });
+        } else {
+            return res.status(404).json({ error: 'Texto não encontrado.' });
+        }
+    } catch (error) {
+        console.error('Erro ao obter texto:', error);
+        return res.status(500).json({ error: 'Erro ao buscar o texto.' });
+    }
+});
+
