@@ -102,7 +102,7 @@ header a {
   border-radius: 0.625rem; /* 10px */
   padding: 1.25rem; /* 20px */
   margin-top: 4rem;
-  width: 100rem;
+  width: 100%;
   font-family: Roboto;
   font-weight: 600;
 }
@@ -166,10 +166,13 @@ img {
   border-radius: 1.25rem; /* 20px */
   background: #8DA5ED;
   margin: 3.125rem auto 0 auto; /* 50px */
-  padding: 2.5rem; /* 40px */
+  padding: 1.5rem; /* 40px */
   padding-top: 7.8125rem; /* 125px */
   padding-bottom: 7.8125rem; /* 125px */
   font-size: 1.555rem; /* 29px */
+}
+.left{
+padding-right:50px ;
 }
 .box3{
   display: flex;
@@ -299,7 +302,7 @@ img {
   padding-bottom: 7.8125rem; /* 125px */
   font-size: 1.555rem; /* 29px */
   margin-bottom: 3rem;
-}
+} 
 /* 768,990,1400 */
 /* Celular */
 @media (max-width: 576px) {

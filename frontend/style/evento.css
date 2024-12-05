@@ -121,7 +121,9 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
+.left{
+  padding-right: 50px;
+}
 .box1 {
   display: flex;
   height: 9.375rem; /* 150px */
