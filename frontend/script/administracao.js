@@ -37,7 +37,7 @@ async function cadastrarUsuario() {
             body: JSON.stringify(usuarioData),
         });
 
-        console.log(response); // Verifique o que o servidor retorna
+        console.log(response); 
 
         if (response.ok) {
             const usuarioCadastrado = await response.json();
@@ -45,7 +45,7 @@ async function cadastrarUsuario() {
             document.getElementById('nome').value = '';
             document.getElementById('email').value = '';
             document.getElementById('senha').value = '';
-            location.reload(); // Atualiza a página
+            location.reload();
         } else {
             const errorData = await response.json();
             alert(`Erro ao cadastrar usuário: ${errorData.error}`);
@@ -57,7 +57,7 @@ async function cadastrarUsuario() {
 }
 
 
-//excluir usuário
+
 async function excluirUsuario() {
     const usuarioExcluir = document.getElementById("exclui-email").value;
 
@@ -66,10 +66,10 @@ async function excluirUsuario() {
         return;
     }
 
-     // Pergunta ao usuário se ele tem certeza
+     
      const confirmar = confirm(`Tem certeza que deseja excluir o usuário com e-mail: ${usuarioExcluir}?`);
      if (!confirmar) {
-         return; // Cancela a exclusão se o usuário clicar em "Cancelar"
+         return; 
      }
 
     try {
@@ -78,13 +78,13 @@ async function excluirUsuario() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email: usuarioExcluir }), // Passa o e-mail como body
+            body: JSON.stringify({ email: usuarioExcluir }), 
         });
 
         if (response.ok) {
             const data = await response.json();
-            alert(data.mensagem); // Mensagem de sucesso do servidor
-            location.reload(); // Atualiza a página
+            alert(data.mensagem);  
+            location.reload(); 
         } else {
             const errorData = await response.json();
             alert(`Erro ao excluir usuário: ${errorData.error}`);
@@ -98,12 +98,12 @@ async function excluirUsuario() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    prepararPagina(); // Certifica-se de que a página foi carregada antes de chamar a função
+    prepararPagina(); 
     carregarUsuarios();
 
     const daltonismoSelect = document.getElementById('daltonismo-select');
 
-    // Recupera a configuração de daltonismo salva
+    
     const savedDaltonismo = localStorage.getItem('daltonismoClass');
     if (savedDaltonismo) {
         document.body.classList.add(savedDaltonismo);
@@ -116,10 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedValue = daltonismoSelect.value;
         if (selectedValue) {
             document.body.classList.add(selectedValue);
-            // Salva a configuração de daltonismo no localStorage
+            
             localStorage.setItem('daltonismoClass', selectedValue);
         } else {
-            // Remove a configuração se nenhuma opção estiver selecionada
+            
             localStorage.removeItem('daltonismoClass');
         }
     });
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             const usuarios = await response.json();
             
-            // Seleciona o elemento onde os usuários serão exibidos
+            
             const usuariosFiltrados = document.querySelector('.usuarios-filtrados');
             
             if (!usuariosFiltrados) {
@@ -143,20 +143,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
     
-            usuariosFiltrados.innerHTML = ''; // Limpa o conteúdo anterior
+            usuariosFiltrados.innerHTML = ''; 
     
-            // Adiciona os usuários ao DOM
+            
             usuarios.forEach((usuario) => {
                 const card = document.createElement('div');
-                card.classList.add('card-filtrado'); // Estilo para o card de usuário
+                card.classList.add('card-filtrado'); 
     
-                // Monta o conteúdo do card
+            
                 card.innerHTML = `
                     <p>Nome: ${usuario.nome}</p>
                     <p>Email: ${usuario.email}</p>
                 `;
     
-                // Adiciona o card ao container
+                
                 usuariosFiltrados.appendChild(card);
             });
         } catch (error) {
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
             logout();
             window.location.href("./../pages/paginaLogin.html")
         } else {
-            window.location.href = './../pages/paginaLogin.html'; // Redireciona para a página de login
+            window.location.href = './../pages/paginaLogin.html'; 
         }
     });
 });

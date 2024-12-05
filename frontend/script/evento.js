@@ -21,7 +21,7 @@ async function prepararPagina() {
 function mostrarLista() {
   const lista = document.getElementById("minhaLista");
 
-  // Verifica se a lista está visível e alterna a visibilidade
+  
   if (lista.style.display === "none") {
     lista.style.display = "flex";
   } else {
@@ -45,7 +45,7 @@ document.querySelector('#loginLink').addEventListener('click', function (e) {
     logout();
     window.location.href("./../pages/paginaLogin.html")
   } else {
-    window.location.href = './../pages/paginaLogin.html'; // Redireciona para a página de login
+    window.location.href = './../pages/paginaLogin.html'; 
   }
 });
 
@@ -73,12 +73,24 @@ async function salvarTexto(id) {
       body: JSON.stringify({ texto: textoEditado })
     });
 
+<<<<<<< HEAD
     const data = await response.json();
 
     if (response.ok) {
       alert(data.mensagem);
     } else {
       alert(`Erro ao atualizar texto: ${data.error}`);
+=======
+      if (response.ok) {
+        alert(data.mensagem);
+        location.reload();
+      } else {
+        alert(`Erro ao salvar texto: ${data.error}`);
+      }
+    } catch (error) {
+      console.error('Erro ao salvar texto:', error);
+      alert('Erro ao conectar ao servidor.');
+>>>>>>> 9a4d1485ee0a6830c1553fc181dc51798552dd7a
     }
   } catch (error) {
     console.error('Erro ao salvar texto:', error);
@@ -87,12 +99,17 @@ async function salvarTexto(id) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+<<<<<<< HEAD
   prepararPagina(); // Certifica-se de que a página foi carregada antes de chamar a função
   carregarTextosDoServidor();
+=======
+  prepararPagina(); 
+  carregarTextoDoServidor();
+>>>>>>> 9a4d1485ee0a6830c1553fc181dc51798552dd7a
 
   const daltonismoSelect = document.getElementById('daltonismo-select');
 
-  // Recupera a configuração de daltonismo salva
+  
   const savedDaltonismo = localStorage.getItem('daltonismoClass');
   if (savedDaltonismo) {
     document.body.classList.add(savedDaltonismo);
@@ -105,10 +122,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const selectedValue = daltonismoSelect.value;
     if (selectedValue) {
       document.body.classList.add(selectedValue);
-      // Salva a configuração de daltonismo no localStorage
+      
       localStorage.setItem('daltonismoClass', selectedValue);
     } else {
-      // Remove a configuração se nenhuma opção estiver selecionada
+      
       localStorage.removeItem('daltonismoClass');
     }
   });
@@ -121,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
       if (response.ok) {
         const data = await response.json();
+<<<<<<< HEAD
   
         // Para cada texto, crie um novo elemento na página
         const container = document.querySelector('#textosContainer');
@@ -135,6 +153,10 @@ document.addEventListener('DOMContentLoaded', function () {
           div.innerText = texto.texto;
           container.appendChild(div);
         });
+=======
+        const editableElement = document.querySelector('.editable');
+        editableElement.innerText = data.texto; 
+>>>>>>> 9a4d1485ee0a6830c1553fc181dc51798552dd7a
       } else {
         alert('Erro ao carregar os textos do servidor');
       }

@@ -29,7 +29,7 @@ function nextImage() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Código existente
+    
     const logo = document.getElementById('header-logo');
     const lista = document.querySelector('.lista');
 
@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(showPopup, 1000);
 
-    // Novo código adicionado para daltonismo
+
     const daltonismoSelect = document.getElementById('daltonismo-select');
 
-    // Recupera a configuração salva do localStorage
+    
     const savedClass = localStorage.getItem('daltonismoClass');
     if (savedClass) {
         document.body.classList.add(savedClass);
@@ -69,18 +69,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (daltonismoSelect) {
         daltonismoSelect.addEventListener('change', function() {
-            // Remove todas as classes de daltonismo
+            
             document.body.classList.remove('protanopia', 'deuteranopia', 'tritanopia');
 
             const selectedValue = daltonismoSelect.value;
             if (selectedValue) {
-                // Adiciona a classe selecionada
+                
                 document.body.classList.add(selectedValue);
 
-                // Salva a configuração no localStorage
+                
                 localStorage.setItem('daltonismoClass', selectedValue);
             } else {
-                // Remove a configuração do localStorage se nenhuma opção for selecionada
+                
                 localStorage.removeItem('daltonismoClass');
             }
         });
@@ -103,6 +103,6 @@ document.querySelector('#loginLink').addEventListener('click', function (e) {
         logout();
         window.location.href("./../pages/paginaLogin.html")
     } else {
-        window.location.href = './../pages/paginaLogin.html'; // Redireciona para a página de login
+        window.location.href = './../pages/paginaLogin.html'; 
     }
 });

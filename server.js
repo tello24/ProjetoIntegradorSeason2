@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Conectar ao MongoDB
+
 async function conectarAoMongo() {
     try {
         await mongoose.connect('mongodb+srv://projetoseason2:12345@projetoseason2.arthu.mongodb.net/projetoseason2?retryWrites=true&w=majority', {
@@ -21,14 +21,14 @@ async function conectarAoMongo() {
     }
 }
 
-// Modelo do Usuário
+
 const userSchema = new mongoose.Schema({
     nome: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     senha: { type: String, required: true }
 });
 
-// Modelo para armazenar textos
+
 const TextoSchema = new mongoose.Schema({
     texto: { type: String, required: true }
 });
@@ -37,7 +37,7 @@ const Texto = mongoose.model('Texto', TextoSchema);
 
 const User = mongoose.model('User', userSchema);
 
-// Endpoint para cadastro
+
 app.post('/cadastrar', async (req, res) => {
     const { nome, email, senha } = req.body;
 
@@ -57,7 +57,7 @@ app.post('/cadastrar', async (req, res) => {
     }
 });
 
-// Endpoint para login
+
 app.post('/login', async (req, res) => {
     const { email, senha } = req.body;
 
@@ -80,7 +80,6 @@ app.post('/login', async (req, res) => {
     res.status(200).json({ token });
 });
 
-// Endpoint para buscar usuários
 app.get('/logins', async (req, res) => {
     try {
         const usuarios = await User.find({}, 'nome email');
@@ -91,9 +90,9 @@ app.get('/logins', async (req, res) => {
     }
 });
 
-// Endpoint para excluir usuários pelo e-mail
+
 app.delete('/usuario', async (req, res) => {
-    const { email } = req.body;  // Recebe o e-mail no corpo da requisição
+    const { email } = req.body;  
 
     if (!email) {
         return res.status(400).json({ error: 'O e-mail é obrigatório.' });
@@ -111,9 +110,21 @@ app.delete('/usuario', async (req, res) => {
     }
 });
 
+<<<<<<< HEAD
 // Endpoint para atualizar um texto existente
 app.put('/atualizar-texto/:id', async (req, res) => {
     const { id } = req.params;
+=======
+
+
+app.listen(8000, async () => {
+    await conectarAoMongo();
+    console.log("Servidor rodando na porta 8000");
+});
+
+
+app.put('/editar-texto', async (req, res) => {
+>>>>>>> 9a4d1485ee0a6830c1553fc181dc51798552dd7a
     const { texto } = req.body;
   
     if (!texto) {
@@ -121,10 +132,24 @@ app.put('/atualizar-texto/:id', async (req, res) => {
     }
   
     try {
+<<<<<<< HEAD
       const textoExistente = await Texto.findById(id);
   
       if (!textoExistente) {
         return res.status(404).json({ error: 'Texto não encontrado.' });
+=======
+      
+      const textoExistente = await Texto.findOne();
+      if (textoExistente) {
+        textoExistente.texto = texto;  
+        await textoExistente.save();  
+        res.status(200).json({ mensagem: 'Texto atualizado com sucesso!' });
+      } else {
+        
+        const novoTexto = new Texto({ texto });
+        const textoSalvo = await novoTexto.save();
+        res.status(201).json({ mensagem: 'Texto salvo com sucesso!', texto: textoSalvo });
+>>>>>>> 9a4d1485ee0a6830c1553fc181dc51798552dd7a
       }
   
       textoExistente.texto = texto;
@@ -140,8 +165,18 @@ app.put('/atualizar-texto/:id', async (req, res) => {
   // Endpoint para buscar todos os textos
   app.get('/buscar-textos', async (req, res) => {
     try {
+<<<<<<< HEAD
       const textos = await Texto.find();
       res.status(200).json(textos);
+=======
+        const texto = await Texto.findOne(); 
+        
+        if (texto) {
+            return res.status(200).json({ texto: texto.texto });
+        } else {
+            return res.status(404).json({ error: 'Texto não encontrado.' });
+        }
+>>>>>>> 9a4d1485ee0a6830c1553fc181dc51798552dd7a
     } catch (error) {
       console.error('Erro ao buscar textos:', error);
       res.status(500).json({ error: 'Erro ao buscar textos.' });

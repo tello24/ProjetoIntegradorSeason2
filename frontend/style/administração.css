@@ -10,7 +10,7 @@ body {
 }
 
 html, body {
-    height: 100%; /* Garante 100% da altura */
+    height: 100%; 
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -28,8 +28,8 @@ main {
 }
 
 #usuarios {
-    flex: 1; /* Faz o conteúdo expandir para ocupar o espaço disponível */
-    padding: 1rem; /* Opcional: Adicione espaçamento no conteúdo */
+    flex: 1; 
+    padding: 1rem; 
 }
 
 body::-webkit-scrollbar {
@@ -226,9 +226,9 @@ header a {
 .usuarios-filtrados {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 25px; /* Espaçamento entre os itens */
-    width: 100%; /* Garante que os cartões ocupem a largura do contêiner */
-    align-items: center; /* Centraliza os cartões */
+    gap: 25px; 
+    width: 100%; 
+    align-items: center; 
 }
 
 .usuarios-filtrados p {
@@ -237,19 +237,19 @@ header a {
 }
 
 .card-filtrado {
-    width: 80%; /* Ajuste conforme necessário */
-    max-width: 600px; /* Define um tamanho máximo */
+    width: 80%; 
+    max-width: 600px; 
     padding: 30px;
     background-color: #313379;
     border-radius: 50px;
 }
 
 footer {
-    background-color: #ED3237; /* Cor de fundo do footer */
+    background-color: #ED3237; 
     color: white;
     text-align: center;
     padding: 1rem 0;
-    width: 100%; /* Garante que o footer tenha 100% de largura */
+    width: 100%; 
 }
 
 .icons {

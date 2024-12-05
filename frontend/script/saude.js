@@ -15,7 +15,7 @@ async function prepararPagina() {
 function mostrarLista() {
   const lista = document.getElementById("minhaLista");
 
-  // Verifica se a lista está visível e alterna a visibilidade
+  
   if (lista.style.display === "none") {
       lista.style.display = "flex";
   } else {
@@ -39,16 +39,16 @@ document.querySelector('#loginLink').addEventListener('click', function (e) {
       logout();
       window.location.href("./../pages/paginaLogin.html")
   } else {
-      window.location.href = './../pages/paginaLogin.html'; // Redireciona para a página de login
+      window.location.href = './../pages/paginaLogin.html'; 
   }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  prepararPagina(); // Inicializa a página
+  prepararPagina(); 
 
   const daltonismoSelect = document.getElementById('daltonismo-select');
 
-  // Recupera a configuração de daltonismo salva
+  
   const savedDaltonismo = localStorage.getItem('daltonismoClass');
   if (savedDaltonismo) {
       document.body.classList.add(savedDaltonismo);
@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const selectedValue = daltonismoSelect.value;
       if (selectedValue) {
           document.body.classList.add(selectedValue);
-          // Salva a configuração de daltonismo no localStorage
+      
           localStorage.setItem('daltonismoClass', selectedValue);
       } else {
-          // Remove a configuração se nenhuma opção estiver selecionada
+          
           localStorage.removeItem('daltonismoClass');
       }
   });
