@@ -49,46 +49,46 @@ document.querySelector('#loginLink').addEventListener('click', function (e) {
   }
 });
 
-async function salvarTexto() {
-  const editableElement = document.querySelector('.editable');
+async function salvarTexto(id) {
+  const textoElement = document.querySelector(`[data-id="${id}"]`);
 
-  if (!editableElement) {
-    alert('Elemento editável não encontrado!');
+  if (!textoElement) {
+    alert('Texto não encontrado!');
     return;
   }
 
-  if (editableElement.getAttribute('contenteditable') === 'true') {
-    const editedText = editableElement.innerText;
+  const textoEditado = textoElement.innerText;
 
-    try {
-      const response = await fetch('http://localhost:8000/editar-texto', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ texto: editedText })
-      });
+  if (!textoEditado) {
+    alert('Texto não pode estar vazio!');
+    return;
+  }
 
-      const data = await response.json();
+  try {
+    const response = await fetch(`http://localhost:8000/atualizar-texto/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ texto: textoEditado })
+    });
 
-      if (response.ok) {
-        alert(data.mensagem);
-        location.reload(); // Atualiza a página
-      } else {
-        alert(`Erro ao salvar texto: ${data.error}`);
-      }
-    } catch (error) {
-      console.error('Erro ao salvar texto:', error);
-      alert('Erro ao conectar ao servidor.');
+    const data = await response.json();
+
+    if (response.ok) {
+      alert(data.mensagem);
+    } else {
+      alert(`Erro ao atualizar texto: ${data.error}`);
     }
-  } else {
-    alert('Você não tem permissão para salvar este texto.');
+  } catch (error) {
+    console.error('Erro ao salvar texto:', error);
+    alert('Erro ao conectar ao servidor.');
   }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   prepararPagina(); // Certifica-se de que a página foi carregada antes de chamar a função
-  carregarTextoDoServidor();
+  carregarTextosDoServidor();
 
   const daltonismoSelect = document.getElementById('daltonismo-select');
 
@@ -113,21 +113,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  async function carregarTextoDoServidor() {
+  async function carregarTextosDoServidor() {
     try {
-      const response = await fetch('http://localhost:8000/buscar-texto', {
+      const response = await fetch('http://localhost:8000/buscar-textos', {
         method: 'GET'
       });
   
       if (response.ok) {
         const data = await response.json();
-        const editableElement = document.querySelector('.editable');
-        editableElement.innerText = data.texto; // Definir o texto recebido do servidor
+  
+        // Para cada texto, crie um novo elemento na página
+        const container = document.querySelector('#textosContainer');
+        container.innerHTML = ''; // Limpa o conteúdo anterior
+  
+        data.forEach((texto) => {
+          const div = document.createElement('div');
+          div.classList.add('editable');
+          div.setAttribute('contenteditable', 'true');
+          div.dataset.id = texto._id; // Armazena o ID do texto
+  
+          div.innerText = texto.texto;
+          container.appendChild(div);
+        });
       } else {
-        alert('Erro ao carregar o texto do servidor');
+        alert('Erro ao carregar os textos do servidor');
       }
     } catch (error) {
-      console.error('Erro ao buscar o texto:', error);
+      console.error('Erro ao carregar textos:', error);
       alert('Erro ao conectar ao servidor.');
     }
   }

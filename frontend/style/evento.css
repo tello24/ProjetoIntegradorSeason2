@@ -111,6 +111,10 @@ header a {
   flex-direction: column;
 }
 
+#textosContainer{
+  gap: 50px;
+}
+
 footer {
   background: #ED3237;
   width: 100%;
