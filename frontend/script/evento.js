@@ -21,7 +21,7 @@ async function prepararPagina() {
 function mostrarLista() {
   const lista = document.getElementById("minhaLista");
 
-  // Verifica se a lista está visível e alterna a visibilidade
+  
   if (lista.style.display === "none") {
     lista.style.display = "flex";
   } else {
@@ -45,7 +45,7 @@ document.querySelector('#loginLink').addEventListener('click', function (e) {
     logout();
     window.location.href("./../pages/paginaLogin.html")
   } else {
-    window.location.href = './../pages/paginaLogin.html'; // Redireciona para a página de login
+    window.location.href = './../pages/paginaLogin.html'; 
   }
 });
 
@@ -73,7 +73,7 @@ async function salvarTexto() {
 
       if (response.ok) {
         alert(data.mensagem);
-        location.reload(); // Atualiza a página
+        location.reload();
       } else {
         alert(`Erro ao salvar texto: ${data.error}`);
       }
@@ -87,12 +87,12 @@ async function salvarTexto() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  prepararPagina(); // Certifica-se de que a página foi carregada antes de chamar a função
+  prepararPagina(); 
   carregarTextoDoServidor();
 
   const daltonismoSelect = document.getElementById('daltonismo-select');
 
-  // Recupera a configuração de daltonismo salva
+  
   const savedDaltonismo = localStorage.getItem('daltonismoClass');
   if (savedDaltonismo) {
     document.body.classList.add(savedDaltonismo);
@@ -105,10 +105,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const selectedValue = daltonismoSelect.value;
     if (selectedValue) {
       document.body.classList.add(selectedValue);
-      // Salva a configuração de daltonismo no localStorage
+      
       localStorage.setItem('daltonismoClass', selectedValue);
     } else {
-      // Remove a configuração se nenhuma opção estiver selecionada
+      
       localStorage.removeItem('daltonismoClass');
     }
   });
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (response.ok) {
         const data = await response.json();
         const editableElement = document.querySelector('.editable');
-        editableElement.innerText = data.texto; // Definir o texto recebido do servidor
+        editableElement.innerText = data.texto; 
       } else {
         alert('Erro ao carregar o texto do servidor');
       }

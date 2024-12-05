@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Conectar ao MongoDB
+
 async function conectarAoMongo() {
     try {
         await mongoose.connect('mongodb+srv://projetoseason2:12345@projetoseason2.arthu.mongodb.net/projetoseason2?retryWrites=true&w=majority', {
@@ -21,14 +21,14 @@ async function conectarAoMongo() {
     }
 }
 
-// Modelo do Usuário
+
 const userSchema = new mongoose.Schema({
     nome: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     senha: { type: String, required: true }
 });
 
-// Modelo para armazenar textos
+
 const TextoSchema = new mongoose.Schema({
     texto: { type: String, required: true },
     criadoEm: { type: Date, default: Date.now }
@@ -38,7 +38,7 @@ const Texto = mongoose.model('Texto', TextoSchema);
 
 const User = mongoose.model('User', userSchema);
 
-// Endpoint para cadastro
+
 app.post('/cadastrar', async (req, res) => {
     const { nome, email, senha } = req.body;
 
@@ -58,7 +58,7 @@ app.post('/cadastrar', async (req, res) => {
     }
 });
 
-// Endpoint para login
+
 app.post('/login', async (req, res) => {
     const { email, senha } = req.body;
 
@@ -81,7 +81,6 @@ app.post('/login', async (req, res) => {
     res.status(200).json({ token });
 });
 
-// Endpoint para buscar usuários
 app.get('/logins', async (req, res) => {
     try {
         const usuarios = await User.find({}, 'nome email');
@@ -92,9 +91,9 @@ app.get('/logins', async (req, res) => {
     }
 });
 
-// Endpoint para excluir usuários pelo e-mail
+
 app.delete('/usuario', async (req, res) => {
-    const { email } = req.body;  // Recebe o e-mail no corpo da requisição
+    const { email } = req.body;  
 
     if (!email) {
         return res.status(400).json({ error: 'O e-mail é obrigatório.' });
@@ -113,13 +112,13 @@ app.delete('/usuario', async (req, res) => {
 });
 
 
-// Iniciar o servidor e conectar ao MongoDB
+
 app.listen(8000, async () => {
     await conectarAoMongo();
     console.log("Servidor rodando na porta 8000");
 });
 
-// Endpoint para salvar ou editar texto existente
+
 app.put('/editar-texto', async (req, res) => {
     const { texto } = req.body;
   
@@ -128,14 +127,14 @@ app.put('/editar-texto', async (req, res) => {
     }
   
     try {
-      // Atualizando o primeiro texto encontrado no banco
+      
       const textoExistente = await Texto.findOne();
       if (textoExistente) {
-        textoExistente.texto = texto;  // Atualiza o texto
-        await textoExistente.save();  // Salva a alteração
+        textoExistente.texto = texto;  
+        await textoExistente.save();  
         res.status(200).json({ mensagem: 'Texto atualizado com sucesso!' });
       } else {
-        // Se não encontrar nenhum texto, cria um novo
+        
         const novoTexto = new Texto({ texto });
         const textoSalvo = await novoTexto.save();
         res.status(201).json({ mensagem: 'Texto salvo com sucesso!', texto: textoSalvo });
@@ -149,7 +148,7 @@ app.put('/editar-texto', async (req, res) => {
 
 app.get('/buscar-texto', async (req, res) => {
     try {
-        const texto = await Texto.findOne(); // Encontra o primeiro texto no banco de dados
+        const texto = await Texto.findOne(); 
         
         if (texto) {
             return res.status(200).json({ texto: texto.texto });
